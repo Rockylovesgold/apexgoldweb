@@ -6,8 +6,18 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 
 const team = [
   {
+    name: "Anthony",
+    role: "Founder & Lead Trader",
+    image: "/team/shabbaranks_2.png",
+    description:
+      "A qualified Gas Safe and plumbing engineer with a diverse entrepreneurial background spanning multiple industries. His career began in the heating sector, building strong technical expertise in domestic plumbing, gas systems, and energy-efficient solutions. He went on to establish and scale an ECO4 company — helping UK homeowners access government-backed grants for heating upgrades — before successfully building and exiting a solar panel business. Today, he owns and operates a tyre garage, car wash, and a property investment company with his brothers. He brings that same discipline and commercial vision to Apex Gold: strategic, consistent, and results-focused.",
+    socials: {
+      twitter: "https://x.com/shabbaranks333?s=21",
+    },
+  },
+  {
     name: "Nav",
-    role: "Community Member",
+    role: "Founding Member",
     image: "/team/nav_2.png",
     description:
       "A qualified Gas Safe and plumbing engineer with a diverse entrepreneurial background across multiple industries. His career started in the heating sector, developing strong technical expertise in domestic plumbing, gas systems, and energy-efficient solutions. He went on to establish and run an ECO4 company, helping UK homeowners access government-backed grants for heating upgrades — supporting vulnerable households while improving energy efficiency in homes. He also successfully built and exited a solar panel company, gaining experience in renewable energy and scaling operations. Today, he owns and operates a tyre garage and car wash, while co-running a property company with his brothers — focused on property investment, development, and long-term growth. He combines technical skill with business vision, consistently building ventures that are both profitable and purposeful.",
@@ -20,16 +30,6 @@ const team = [
     description:
       "A 27-year-old entrepreneur with a strong focus on building and scaling modern businesses in the digital space. With a background in marketing and web development, he specialises in creating systems that drive growth, increase visibility, and generate consistent results. He has successfully developed and managed multiple businesses across online and service-based industries, combining practical execution with a deep understanding of digital platforms. Alongside this, he has been actively developing his trading strategy over the past two years — further sharpening his analytical thinking, discipline, and risk management skills as part of his long-term business direction.",
     socials: {},
-  },
-  {
-    name: "Anthony",
-    role: "Founder & Lead Trader",
-    image: "/team/shabbaranks_2.png",
-    description:
-      "A qualified Gas Safe and plumbing engineer with a diverse entrepreneurial background spanning multiple industries. His career began in the heating sector, building strong technical expertise in domestic plumbing, gas systems, and energy-efficient solutions. He went on to establish and scale an ECO4 company — helping UK homeowners access government-backed grants for heating upgrades — before successfully building and exiting a solar panel business. Today, he owns and operates a tyre garage, car wash, and a property investment company with his brothers. He brings that same discipline and commercial vision to Apex Gold: strategic, consistent, and results-focused.",
-    socials: {
-      twitter: "https://x.com/shabbaranks333?s=21",
-    },
   },
   {
     name: "Andrew Shim",
