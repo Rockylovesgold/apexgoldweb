@@ -6,7 +6,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 
 const team = [
   {
-    name: "Shabbaranks",
+    name: "Anthony",
     role: "Founder & Lead Trader",
     image: "/team/shabbaranks_2.png",
     description:

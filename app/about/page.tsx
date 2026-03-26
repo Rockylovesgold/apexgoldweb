@@ -43,7 +43,7 @@ const values = [
 ];
 
 const socials = [
-  { label: "Twitter / X", handle: "@shabbaranks333", icon: Twitter, href: "https://x.com/shabbaranks333?s=21" },
+  { label: "Twitter / X", handle: "@apexgoldtrading", icon: Twitter, href: "https://x.com/shabbaranks333?s=21" },
   { label: "TikTok", handle: "@apexgoldtrading", icon: TikTokIcon, href: "https://www.tiktok.com/@apexgoldtrading?_r=1&_t=ZN-94PTgXN5x4B" },
   { label: "Facebook", handle: "Apex Gold Trading", icon: Facebook, href: "https://www.facebook.com/share/1KgV7EDWJB/?mibextid=wwXIfr" },
   { label: "Telegram", handle: "Live Community", icon: Send, href: "https://t.me/+q1ArU5QujUJiZmVk" },
@@ -127,7 +127,7 @@ export default function AboutPage() {
             </div>
 
             <div style={{ flex: 1, minWidth: "240px" }}>
-              <h3 style={{ fontSize: "var(--text-3xl)", marginBottom: "4px" }}>Shabbaranks</h3>
+              <h3 style={{ fontSize: "var(--text-3xl)", marginBottom: "4px" }}>Anthony</h3>
               <p
                 style={{
                   color: "var(--color-accent-gold)",
