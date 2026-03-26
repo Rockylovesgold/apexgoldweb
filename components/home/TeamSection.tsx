@@ -56,14 +56,6 @@ const team = [
     socials: {},
   },
   {
-    name: "Rob",
-    role: "Community Member & Educator",
-    image: "/team/rob_2.png",
-    description:
-      "Rob Clark is a member of Apex Gold Trading who began his journey in gold and commodity markets in 2025. With a focus on education, discipline, and the practical application of trading skills, he plays an active role within the community — helping members build confidence and approach the markets with the right foundations. His approach is grounded in the belief that consistency and a supportive learning environment are the cornerstones of long-term success, whether members are looking to generate supplementary income or develop a more substantial trading strategy over time.",
-    socials: {},
-  },
-  {
     name: "Nav",
     role: "Community Member",
     image: "/team/nav_2.png",
