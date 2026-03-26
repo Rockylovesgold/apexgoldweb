@@ -4,7 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { useAuth } from '@/hooks/useAuth'
 import { Eye, EyeOff, Mail, Lock, AlertCircle } from 'lucide-react'
-import GoldGradientText from '@/components/ui/GoldGradientText'
+// import GoldGradientText from '@/components/ui/GoldGradientText'
 
 export default function LoginPage() {
   const { signIn, signInWithGoogle, signInWithApple, loading, error } = useAuth()

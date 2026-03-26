@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState } from 'react' // eslint-disable-line @typescript-eslint/no-unused-vars
 import { useQuery } from '@tanstack/react-query'
 import toast from 'react-hot-toast'
 import { createClient } from '@/lib/supabase/client'

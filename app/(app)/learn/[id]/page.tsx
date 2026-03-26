@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useMemo } from 'react'
+import { useState, useMemo } from 'react'
 import { useParams, useRouter } from 'next/navigation'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import { createClient } from '@/lib/supabase/client'
@@ -127,7 +127,7 @@ function CompletionScreen({ module, sessions, onBack }: CompletionScreenProps) {
         </h1>
 
         <p style={{ fontSize: 'var(--text-lg)', color: 'var(--color-text-secondary)', maxWidth: 380 }}>
-          You've finished <strong style={{ color: 'var(--color-text-primary)' }}>{module.title}</strong>
+          You&apos;ve finished <strong style={{ color: 'var(--color-text-primary)' }}>{module.title}</strong>
         </p>
 
         {totalScored > 0 && (
@@ -457,7 +457,7 @@ export default function ModulePlayerPage() {
     },
   })
 
-  const { data: existingProgress } = useQuery<EducationProgress | null>({
+  const { data: _existingProgress } = useQuery<EducationProgress | null>({
     queryKey: ['education_progress_module', user?.id, moduleId],
     queryFn: async () => {
       if (!user?.id) return null

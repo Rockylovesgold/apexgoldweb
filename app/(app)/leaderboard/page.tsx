@@ -200,7 +200,7 @@ export default function LeaderboardPage() {
   const sorted = [...rows].sort((a, b) => b[metric] - a[metric])
 
   const top3 = sorted.slice(0, 3)
-  const rest = sorted.slice(3)
+  const _rest = sorted.slice(3)
 
   const rankMedals: Record<number, string> = { 1: '🥇', 2: '🥈', 3: '🥉' }
 

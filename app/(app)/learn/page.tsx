@@ -34,7 +34,7 @@ interface ModuleCardProps {
 
 function ModuleCard({ module, progress, onClick }: ModuleCardProps) {
   const diff = DIFFICULTY_STYLES[module.difficulty]
-  const totalQuestions = progress
+  const _totalQuestions = progress
     ? Math.max(progress.questions_answered, 1)
     : 1
   const answered = progress?.questions_answered ?? 0

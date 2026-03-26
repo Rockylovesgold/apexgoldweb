@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import BackgroundCanvas from "@/components/layout/BackgroundCanvas";
 import { ClientAppWrapper } from "@/components/layout/ClientAppWrapper";
@@ -31,11 +31,12 @@ export const metadata: Metadata = {
     "trading community",
     "precious metals",
   ],
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    viewportFit: "cover",
-  },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
 };
 
 export default function RootLayout({

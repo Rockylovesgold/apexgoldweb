@@ -218,7 +218,7 @@ function SummaryCard({
   label,
   value,
   sub,
-  positive,
+  positive: _positive,
 }: {
   label: string
   value: string

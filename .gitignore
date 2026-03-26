@@ -34,3 +34,15 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# logs
+*.log
+server.log
+.dev-server.log
+
+# local dev scripts
+start-dev.bat
+test-*.js
+
+# claude code settings
+.claude/
