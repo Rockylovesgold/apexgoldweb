@@ -142,13 +142,13 @@ export default function AboutPage() {
 
               <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
                 <p style={{ fontSize: "var(--text-sm)", color: "var(--color-text-secondary)", lineHeight: "var(--leading-relaxed)", margin: 0 }}>
-                  Anthony is a serial entrepreneur and the founder of Apex Gold Trading. A qualified Gas Safe and plumbing engineer by trade, he expanded into renewable energy — establishing and exiting both an ECO4 company and a solar panel business — before going on to own and operate a tyre garage, car wash, and a property investment company alongside his brothers.
+                  Anthony is the founder and lead analyst of Apex Gold Trading. With over eight years of experience across cryptocurrency and gold (XAU/USD) markets, he has developed a deep, systematic understanding of price action, market structure, and risk-managed trade execution — beginning in crypto in 2016, expanding into forex in 2020, and identifying gold as the most consistent and tradeable market from 2022 onwards.
                 </p>
                 <p style={{ fontSize: "var(--text-sm)", color: "var(--color-text-secondary)", lineHeight: "var(--leading-relaxed)", margin: 0 }}>
-                  His entrepreneurial instinct is matched by a deep commitment to financial education. With over eight years of experience trading cryptocurrency and gold (XAU/USD) markets, he founded Apex Gold Trading with one mission — to help people create genuine financial freedom using nothing more than a phone or laptop, from anywhere in the world.
+                  Operating between the UK and Dubai, Anthony built the Apex Gold community from the ground up — starting as a private Telegram group and growing it into a global operation of 5,000+ members. He personally oversees the daily signal desk, delivering 8–10 structured trade ideas every day with a reported 91% win rate.
                 </p>
                 <p style={{ fontSize: "var(--text-sm)", color: "var(--color-text-secondary)", lineHeight: "var(--leading-relaxed)", margin: 0 }}>
-                  What began as a private Telegram group has grown into a global community of 5,000+ traders receiving 8–10 daily signals with a reported 91% win rate — built on real results, full transparency, and a professional environment for traders at every level.
+                  His mission is straightforward: remove the barriers to financial markets and give everyday people access to the same opportunities as professionals — using nothing more than a phone or laptop, from anywhere in the world.
                 </p>
               </div>
             </div>
