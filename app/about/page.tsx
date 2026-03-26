@@ -142,13 +142,13 @@ export default function AboutPage() {
 
               <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
                 <p style={{ fontSize: "var(--text-sm)", color: "var(--color-text-secondary)", lineHeight: "var(--leading-relaxed)", margin: 0 }}>
-                  A qualified Gas Safe and plumbing engineer with a diverse entrepreneurial background spanning multiple industries. His career began in the heating sector before he went on to establish and scale an ECO4 company — helping UK homeowners access government-backed grants for heating upgrades — and successfully build and exit a solar panel business.
+                  Anthony is a serial entrepreneur and the founder of Apex Gold Trading. A qualified Gas Safe and plumbing engineer by trade, he expanded into renewable energy — establishing and exiting both an ECO4 company and a solar panel business — before going on to own and operate a tyre garage, car wash, and a property investment company alongside his brothers.
                 </p>
                 <p style={{ fontSize: "var(--text-sm)", color: "var(--color-text-secondary)", lineHeight: "var(--leading-relaxed)", margin: 0 }}>
-                  Today he owns and operates a tyre garage, car wash, and a property investment company with his brothers. He combines that same entrepreneurial discipline with 8 years of experience trading cryptocurrency and gold (XAU/USD) markets — operating between Dubai and the UK with one clear mission: to help people create true financial freedom using just their phone or laptop, from anywhere in the world.
+                  His entrepreneurial instinct is matched by a deep commitment to financial education. With over eight years of experience trading cryptocurrency and gold (XAU/USD) markets, he founded Apex Gold Trading with one mission — to help people create genuine financial freedom using nothing more than a phone or laptop, from anywhere in the world.
                 </p>
                 <p style={{ fontSize: "var(--text-sm)", color: "var(--color-text-secondary)", lineHeight: "var(--leading-relaxed)", margin: 0 }}>
-                  What began as a private Telegram community has grown into a high-performance trading brand delivering 8–10 signals per day with a reported 91% win rate — providing real-time market analysis, clear trade setups, and a professional environment for traders at every level.
+                  What began as a private Telegram group has grown into a global community of 5,000+ traders receiving 8–10 daily signals with a reported 91% win rate — built on real results, full transparency, and a professional environment for traders at every level.
                 </p>
               </div>
             </div>
