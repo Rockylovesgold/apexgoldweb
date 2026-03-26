@@ -76,7 +76,7 @@ const team = [
     role: "Community Member",
     image: "/team/nav_2.png",
     description:
-      "Nav is an emerging member of the trading community with a growing interest in financial markets and personal development. With a focus on learning and consistency, Nav is actively building knowledge within gold trading and developing the discipline required for long-term success.",
+      "A qualified Gas Safe and plumbing engineer with a diverse entrepreneurial background across multiple industries. His career started in the heating sector, developing strong technical expertise in domestic plumbing, gas systems, and energy-efficient solutions. He went on to establish and run an ECO4 company, helping UK homeowners access government-backed grants for heating upgrades — supporting vulnerable households while improving energy efficiency in homes. He also successfully built and exited a solar panel company, gaining experience in renewable energy and scaling operations. Today, he owns and operates a tyre garage and car wash, while co-running a property company with his brothers — focused on property investment, development, and long-term growth. He combines technical skill with business vision, consistently building ventures that are both profitable and purposeful.",
     socials: {},
   },
 ];
