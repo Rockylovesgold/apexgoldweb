@@ -56,7 +56,7 @@ const team = [
     socials: {},
   },
   {
-    name: "Dinny",
+    name: "Kyle",
     role: "Community Builder & Entrepreneur",
     image: "/team/dinny_2.png",
     description:
