@@ -79,6 +79,14 @@ const team = [
       "A qualified Gas Safe and plumbing engineer with a diverse entrepreneurial background across multiple industries. His career started in the heating sector, developing strong technical expertise in domestic plumbing, gas systems, and energy-efficient solutions. He went on to establish and run an ECO4 company, helping UK homeowners access government-backed grants for heating upgrades — supporting vulnerable households while improving energy efficiency in homes. He also successfully built and exited a solar panel company, gaining experience in renewable energy and scaling operations. Today, he owns and operates a tyre garage and car wash, while co-running a property company with his brothers — focused on property investment, development, and long-term growth. He combines technical skill with business vision, consistently building ventures that are both profitable and purposeful.",
     socials: {},
   },
+  {
+    name: "Kelsey",
+    role: "Lead Affiliate & Gold Trader",
+    image: "/team/kelsey_2.png",
+    description:
+      "A 36-year-old dedicated mum of two and active gold trader with a strong focus on building multiple, sustainable income streams. Passionate about developing financial independence while maintaining a balanced family life, she leads by example through consistency, discipline, and a strong work ethic. Through gold trading she has developed a deep understanding of the markets — applying strategy, patience, and continuous learning to navigate a fast-paced environment. As a lead affiliate within the Apex community, she works closely with individuals looking to learn new skills, improve their mindset, and generate additional income, offering guidance and real, practical insight at every stage of the journey.",
+    socials: {},
+  },
 ];
 
 const socialIcons: Record<string, React.ElementType> = {
