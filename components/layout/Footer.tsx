@@ -65,12 +65,8 @@ export function Footer() {
       <div className="container-max relative py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8 md:gap-10">
           <div className="space-y-4">
-            <Link href="/" className="inline-flex items-center gap-3">
-              <Image src="/logo.svg" alt="Apex Gold Trading" width={36} height={39} className="h-8 w-auto" />
-              <div className="leading-none">
-                <p className="text-base font-semibold text-text-primary">Apex Gold</p>
-                <p className="text-[9px] tracking-[0.22em] uppercase text-gold mt-1">Trading</p>
-              </div>
+            <Link href="/" className="inline-flex">
+              <Image src="/apex-gold-logo.png" alt="Apex Gold Trading" width={120} height={120} className="h-16 w-auto" />
             </Link>
             <p className="text-sm text-text-tertiary max-w-xs">
               A premium gold-focused trading community built on discipline, structure, and execution.

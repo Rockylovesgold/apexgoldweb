@@ -47,23 +47,15 @@ export function Navbar() {
       >
         <div className="container-max w-full">
           <div className="flex h-[68px] items-center justify-between">
-            <Link href="/" className="group flex items-center gap-2.5 no-underline">
+            <Link href="/" className="group no-underline">
               <Image
-                src="/logo.svg"
+                src="/apex-gold-logo.png"
                 alt="Apex Gold Trading"
-                width={36}
-                height={39}
+                width={120}
+                height={120}
                 priority
-                className="h-[34px] w-auto shrink-0 transition-transform duration-fast ease-out group-hover:scale-[1.02]"
+                className="h-[52px] w-auto shrink-0 transition-transform duration-fast ease-out group-hover:scale-[1.02]"
               />
-              <div className="flex flex-col leading-none">
-                <span className="font-display text-[1.0625rem] font-bold tracking-[-0.025em] text-text-primary">
-                  Apex Gold
-                </span>
-                <span className="mt-[2px] text-[0.5625rem] font-semibold uppercase tracking-[0.2em] text-gold/90">
-                  Trading
-                </span>
-              </div>
             </Link>
 
             <div className="hidden items-center gap-8 lg:flex">
