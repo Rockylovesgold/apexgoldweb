@@ -11,8 +11,6 @@ import { signals } from "@/lib/mockData";
 
 const resultScreenshots = [
   // Actual trade results
-  { src: "/results/mt5-results-1.jpg", caption: "MT5 Trade History", type: "result" },
-  { src: "/results/mt5-results-2.jpg", caption: "Closed Trades — P&L", type: "result" },
   { src: "/results/mt5-results-3.jpg", caption: "Closed Trades — P&L", type: "result" },
   { src: "/results/telegram-signal-1.jpg", caption: "Live Signal — Take Profits Hit", type: "signal" },
   { src: "/results/telegram-signal-2.jpg", caption: "Signal Results Channel", type: "signal" },
