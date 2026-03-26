@@ -6,22 +6,27 @@ function rand(min: number, max: number) {
   return Math.random() * (max - min) + min;
 }
 
-interface CandleLayer {
-  x: number;
-  y: number;
+interface Candle {
+  baseX: number;
+  baseY: number;
   w: number;
   h: number;
   wickU: number;
   wickD: number;
   bullish: boolean;
-  dx: number;
   opacity: number;
+  speedX: number;
+  speedY: number;
+  phaseX: number;
+  phaseY: number;
   layer: "back" | "mid" | "front";
 }
 
-interface DataNode {
+interface Node {
   x: number;
   y: number;
+  vx: number;
+  vy: number;
   r: number;
   opacity: number;
   phase: number;
@@ -59,69 +64,70 @@ export default function BackgroundCanvas() {
 
     setSize();
 
-    const GRID_SPACING = 64;
-    const candleLayers: CandleLayer[] = [];
-    const backCount = Math.floor((W / 80) * 0.6);
-    const midCount = Math.floor((W / 120) * 0.5);
-    const frontCount = Math.floor((W / 160) * 0.4);
+    // ── Candles ───────────────────────────────────────────────────────
+    const GRID = 64;
+    const candles: Candle[] = [];
+    const counts = {
+      back:  Math.floor((W / 90)  * 0.5),
+      mid:   Math.floor((W / 130) * 0.45),
+      front: Math.floor((W / 170) * 0.35),
+    };
 
-    for (let i = 0; i < backCount; i++) {
-      candleLayers.push({
-        x: rand(0, W),
-        y: rand(0, H),
-        w: rand(4, 10),
-        h: rand(12, 36),
-        wickU: rand(4, 14),
-        wickD: rand(4, 14),
-        bullish: Math.random() > 0.5,
-        dx: rand(-0.08, 0.08),
-        opacity: rand(0.015, 0.035),
-        layer: "back",
-      });
-    }
-    for (let i = 0; i < midCount; i++) {
-      candleLayers.push({
-        x: rand(0, W),
-        y: rand(0, H),
-        w: rand(6, 14),
-        h: rand(18, 48),
-        wickU: rand(6, 20),
-        wickD: rand(6, 20),
-        bullish: Math.random() > 0.5,
-        dx: rand(-0.12, 0.12),
-        opacity: rand(0.025, 0.055),
-        layer: "mid",
-      });
-    }
-    for (let i = 0; i < frontCount; i++) {
-      candleLayers.push({
-        x: rand(0, W),
-        y: rand(0, H),
-        w: rand(8, 16),
-        h: rand(24, 56),
-        wickU: rand(8, 24),
-        wickD: rand(8, 24),
-        bullish: Math.random() > 0.5,
-        dx: rand(-0.18, 0.18),
-        opacity: rand(0.04, 0.08),
-        layer: "front",
-      });
-    }
+    (["back", "mid", "front"] as const).forEach((layer) => {
+      const n = counts[layer];
+      for (let i = 0; i < n; i++) {
+        const wRange  = layer === "back"  ? [4,10]  : layer === "mid" ? [6,14]  : [8,18];
+        const hRange  = layer === "back"  ? [12,36] : layer === "mid" ? [18,50] : [24,60];
+        const opRange = layer === "back"  ? [0.02,0.045] : layer === "mid" ? [0.03,0.065] : [0.045,0.09];
+        const spRange = layer === "back"  ? [0.06,0.14]  : layer === "mid" ? [0.1,0.22]   : [0.14,0.30];
+        candles.push({
+          baseX:  rand(0, W),
+          baseY:  rand(0, H),
+          w:      rand(wRange[0], wRange[1]),
+          h:      rand(hRange[0], hRange[1]),
+          wickU:  rand(4, 20),
+          wickD:  rand(4, 20),
+          bullish: Math.random() > 0.5,
+          opacity: rand(opRange[0], opRange[1]),
+          speedX:  rand(spRange[0], spRange[1]) * (Math.random() > 0.5 ? 1 : -1),
+          speedY:  rand(0.04, 0.10),
+          phaseX:  rand(0, Math.PI * 2),
+          phaseY:  rand(0, Math.PI * 2),
+          layer,
+        });
+      }
+    });
 
-    const nodeCount = Math.min(12, Math.floor((W * H) / 120000));
-    const nodes: DataNode[] = Array.from({ length: nodeCount }, () => ({
-      x: rand(0, W),
-      y: rand(0, H),
-      r: rand(0.8, 2),
-      opacity: rand(0.04, 0.12),
-      phase: rand(0, Math.PI * 2),
+    // ── Floating gold nodes ──────────────────────────────────────────
+    const nodeCount = Math.min(14, Math.floor((W * H) / 100000));
+    const nodes: Node[] = Array.from({ length: nodeCount }, () => ({
+      x:       rand(0, W),
+      y:       rand(0, H),
+      vx:      rand(-6, 6),
+      vy:      rand(-6, 6),
+      r:       rand(1, 2.5),
+      opacity: rand(0.05, 0.18),
+      phase:   rand(0, Math.PI * 2),
     }));
 
-    const pathLen = 80;
-    const pathPoints: number[] = Array.from({ length: pathLen }, (_, i) =>
-      0.35 * H + 0.25 * H * Math.sin((i / (pathLen - 1)) * Math.PI * 1.8) + rand(-6, 6)
-    );
-    let pathOffset = 0;
+    // ── Price path (animated via layered sines) ──────────────────────
+    const PATH_SEGS = 100;
+
+    function priceY(i: number, t: number): number {
+      const p = i / (PATH_SEGS - 1);
+      return (
+        H * 0.38 +
+        H * 0.12 * Math.sin(p * Math.PI * 2.2 + t * 0.18) +
+        H * 0.06 * Math.sin(p * Math.PI * 5.1 - t * 0.28) +
+        H * 0.03 * Math.sin(p * Math.PI * 9.3 + t * 0.42)
+      );
+    }
+
+    // ── Glow pulse position ──────────────────────────────────────────
+    let glowX = W * 0.5;
+    let glowY = H * 0.4;
+    const glowTargetX = W * rand(0.3, 0.7);
+    const glowTargetY = H * rand(0.25, 0.65);
 
     function frame(now: number) {
       if (paused || !ctx) {
@@ -129,91 +135,118 @@ export default function BackgroundCanvas() {
         animId = requestAnimationFrame(frame);
         return;
       }
-      const dt = Math.min((now - lastTime) / 1000, 0.1);
+      const dt = Math.min((now - lastTime) / 1000, 0.05);
       lastTime = now;
       elapsed += dt;
 
       ctx.clearRect(0, 0, W, H);
 
-      const cx = W / 2;
-      const cy = H / 2;
-
-      const baseGrad = ctx.createLinearGradient(0, 0, 0, H);
-      baseGrad.addColorStop(0, "#060608");
-      baseGrad.addColorStop(0.4, "#0a0a0e");
-      baseGrad.addColorStop(1, "#0e0e14");
-      ctx.fillStyle = baseGrad;
+      // ── Base gradient background ─────────────────────────────────
+      const bg = ctx.createLinearGradient(0, 0, 0, H);
+      bg.addColorStop(0,   "#060608");
+      bg.addColorStop(0.4, "#0a0a0e");
+      bg.addColorStop(1,   "#0e0e14");
+      ctx.fillStyle = bg;
       ctx.fillRect(0, 0, W, H);
 
-      const gridOpacity = 0.03 + 0.015 * Math.sin(elapsed * 0.3);
-      ctx.strokeStyle = `rgba(255,255,255,${gridOpacity})`;
-      ctx.lineWidth = 1;
-      const xOff = (elapsed * 2) % GRID_SPACING;
-      const yOff = (elapsed * 1.5) % GRID_SPACING;
-      for (let x = -xOff; x < W + GRID_SPACING; x += GRID_SPACING) {
+      // ── Subtle gold ambient glow ─────────────────────────────────
+      glowX += (glowTargetX - glowX) * 0.0003;
+      glowY += (glowTargetY - glowY) * 0.0003;
+      const glowPulse = 0.5 + 0.5 * Math.sin(elapsed * 0.25);
+      const glow = ctx.createRadialGradient(glowX, glowY, 0, glowX, glowY, H * 0.65);
+      glow.addColorStop(0,   `rgba(201,162,39,${0.035 * glowPulse})`);
+      glow.addColorStop(0.5, `rgba(201,162,39,${0.012 * glowPulse})`);
+      glow.addColorStop(1,   "rgba(201,162,39,0)");
+      ctx.fillStyle = glow;
+      ctx.fillRect(0, 0, W, H);
+
+      // ── Moving grid ──────────────────────────────────────────────
+      const gridOp = 0.025 + 0.01 * Math.sin(elapsed * 0.2);
+      ctx.strokeStyle = `rgba(255,255,255,${gridOp})`;
+      ctx.lineWidth = 0.5;
+      const xOff = (elapsed * 1.2) % GRID;
+      const yOff = (elapsed * 0.8) % GRID;
+      for (let x = -xOff; x < W + GRID; x += GRID) {
         ctx.beginPath();
         ctx.moveTo(Math.round(x), 0);
         ctx.lineTo(Math.round(x), H);
         ctx.stroke();
       }
-      for (let y = -yOff; y < H + GRID_SPACING; y += GRID_SPACING) {
+      for (let y = -yOff; y < H + GRID; y += GRID) {
         ctx.beginPath();
         ctx.moveTo(0, Math.round(y));
         ctx.lineTo(W, Math.round(y));
         ctx.stroke();
       }
 
-      candleLayers.forEach((c) => {
-        c.x += c.dx;
-        if (c.x < -c.w - 20) c.x = W + 20;
-        if (c.x > W + c.w + 20) c.x = -20;
+      // ── Candles (sinusoidal float) ───────────────────────────────
+      candles.forEach((c) => {
+        const x = c.baseX + Math.sin(elapsed * c.speedX + c.phaseX) * (W * 0.12);
+        const y = c.baseY + Math.sin(elapsed * c.speedY + c.phaseY) * (H * 0.06);
 
-        const drawX = Math.round(c.x);
-        const drawY = Math.round(c.y);
         const color = c.bullish ? "rgba(0,200,83," : "rgba(229,57,53,";
-        const alpha = c.layer === "back" ? c.opacity * 0.7 : c.layer === "mid" ? c.opacity : c.opacity;
-        ctx.fillStyle = color + alpha + ")";
-        ctx.strokeStyle = color + alpha + ")";
-        ctx.lineWidth = 1;
+        // Back layer fades with a slow breath
+        const breathe = c.layer === "back"
+          ? 0.6 + 0.4 * Math.sin(elapsed * 0.4 + c.phaseX)
+          : 1;
+        const alpha = c.opacity * breathe;
 
-        const wickX = drawX + Math.round(c.w / 2);
+        ctx.fillStyle   = color + alpha + ")";
+        ctx.strokeStyle = color + alpha + ")";
+        ctx.lineWidth = 0.8;
+
+        const wickX = Math.round(x + c.w / 2);
+        const cy2   = Math.round(y);
         ctx.beginPath();
-        ctx.moveTo(wickX, drawY - c.wickU);
-        ctx.lineTo(wickX, drawY + c.h + c.wickD);
+        ctx.moveTo(wickX, cy2 - c.wickU);
+        ctx.lineTo(wickX, cy2 + c.h + c.wickD);
         ctx.stroke();
-        ctx.fillRect(drawX, drawY, Math.round(c.w), Math.round(c.h));
+        ctx.fillRect(Math.round(x), cy2, Math.round(c.w), Math.round(c.h));
       });
 
-      pathOffset = (pathOffset + 8 * dt) % (W + 80);
-      const pathStep = (W + 80) / (pathLen - 1);
-      ctx.strokeStyle = `rgba(201,162,39,${0.055 + 0.025 * Math.sin(elapsed * 0.5)})`;
+      // ── Animated price path ──────────────────────────────────────
+      const pathAlpha = 0.06 + 0.03 * Math.sin(elapsed * 0.35);
+      ctx.strokeStyle = `rgba(201,162,39,${pathAlpha})`;
       ctx.lineWidth = 1.5;
+      ctx.shadowColor = "rgba(201,162,39,0.25)";
+      ctx.shadowBlur = 6;
       ctx.beginPath();
-      let started = false;
-      for (let i = 0; i < pathLen; i++) {
-        const px = i * pathStep - pathOffset;
-        if (px >= -2 && px <= W + 2) {
-          if (!started) {
-            ctx.moveTo(px, pathPoints[i]);
-            started = true;
-          } else ctx.lineTo(px, pathPoints[i]);
-        }
+      for (let i = 0; i < PATH_SEGS; i++) {
+        const px = (i / (PATH_SEGS - 1)) * W;
+        const py = priceY(i, elapsed);
+        if (i === 0) ctx.moveTo(px, py);
+        else ctx.lineTo(px, py);
       }
       ctx.stroke();
+      ctx.shadowBlur = 0;
 
+      // ── Floating gold nodes ──────────────────────────────────────
       nodes.forEach((n) => {
-        const pulse = 0.7 + 0.3 * Math.sin(elapsed * 0.8 + n.phase);
+        // Gentle drift with soft boundary wrap
+        n.x += n.vx * dt;
+        n.y += n.vy * dt;
+        if (n.x < -10) n.x = W + 10;
+        if (n.x > W + 10) n.x = -10;
+        if (n.y < -10) n.y = H + 10;
+        if (n.y > H + 10) n.y = -10;
+
+        const pulse = 0.5 + 0.5 * Math.sin(elapsed * 0.6 + n.phase);
+        const gRadius = n.r * (2 + pulse * 2);
+        const ng = ctx.createRadialGradient(n.x, n.y, 0, n.x, n.y, gRadius);
+        ng.addColorStop(0,   `rgba(201,162,39,${n.opacity * pulse})`);
+        ng.addColorStop(1,   "rgba(201,162,39,0)");
+        ctx.fillStyle = ng;
         ctx.beginPath();
-        ctx.arc(Math.round(n.x), Math.round(n.y), n.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(201,162,39,${n.opacity * pulse})`;
+        ctx.arc(n.x, n.y, gRadius, 0, Math.PI * 2);
         ctx.fill();
       });
 
-      const vignette = ctx.createRadialGradient(cx, cy, H * 0.2, cx, cy, H * 0.9);
-      vignette.addColorStop(0, "rgba(10,10,13,0)");
-      vignette.addColorStop(0.6, "rgba(10,10,13,0.4)");
-      vignette.addColorStop(1, "rgba(10,10,13,0.85)");
-      ctx.fillStyle = vignette;
+      // ── Vignette ─────────────────────────────────────────────────
+      const vig = ctx.createRadialGradient(W / 2, H / 2, H * 0.2, W / 2, H / 2, H * 0.95);
+      vig.addColorStop(0,   "rgba(10,10,13,0)");
+      vig.addColorStop(0.55,"rgba(10,10,13,0.35)");
+      vig.addColorStop(1,   "rgba(10,10,13,0.88)");
+      ctx.fillStyle = vig;
       ctx.fillRect(0, 0, W, H);
 
       animId = requestAnimationFrame(frame);
@@ -229,9 +262,7 @@ export default function BackgroundCanvas() {
 
     function onResize() {
       if (resizeTimer) clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(() => {
-        setSize();
-      }, 200);
+      resizeTimer = setTimeout(setSize, 200);
     }
     window.addEventListener("resize", onResize);
 
