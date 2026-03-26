@@ -1,0 +1,297 @@
+"use client";
+
+import Image from "next/image";
+import { Eye, Users, GraduationCap, Twitter, Facebook, Send } from "lucide-react";
+import { SectionHeading } from "@/components/ui/SectionHeading";
+import { TeamSection } from "@/components/home/TeamSection";
+import { timelineEvents } from "@/lib/mockData";
+
+function TikTokIcon({ size = 16 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
+      <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.76a4.85 4.85 0 0 1-1.01-.07z" />
+    </svg>
+  );
+}
+
+const stats = [
+  { value: "8+", label: "Years Trading Experience" },
+  { value: "91%", label: "Reported Win Rate" },
+  { value: "8–10", label: "Signals Per Day" },
+  { value: "UK & Dubai", label: "Operating Locations" },
+];
+
+const values = [
+  {
+    title: "Transparency",
+    icon: Eye,
+    description:
+      "Every trade is logged and verifiable. We never hide losses or cherry-pick results. Our track record is open for all to see.",
+  },
+  {
+    title: "Community",
+    icon: Users,
+    description:
+      "More than just signals — we're a community of traders, affiliates, and entrepreneurs supporting each other. Share strategies, discuss markets, and grow together.",
+  },
+  {
+    title: "Education",
+    icon: GraduationCap,
+    description:
+      "We believe in teaching you to fish. Our educational resources help you understand why trades work, not just what to trade.",
+  },
+];
+
+const socials = [
+  { label: "Twitter / X", handle: "@shabbaranks333", icon: Twitter, href: "https://x.com/shabbaranks333?s=21" },
+  { label: "TikTok", handle: "@apexgoldtrading", icon: TikTokIcon, href: "https://www.tiktok.com/@apexgoldtrading?_r=1&_t=ZN-94PTgXN5x4B" },
+  { label: "Facebook", handle: "Apex Gold Trading", icon: Facebook, href: "https://www.facebook.com/share/1KgV7EDWJB/?mibextid=wwXIfr" },
+  { label: "Telegram", handle: "Live Community", icon: Send, href: "https://t.me/+q1ArU5QujUJiZmVk" },
+  { label: "Results Channel", handle: "Trade Results", icon: Send, href: "https://t.me/apexgoldresults" },
+];
+
+export default function AboutPage() {
+  return (
+    <>
+      {/* Hero */}
+      <section className="section-padding" style={{ paddingTop: "8rem", paddingBottom: "4rem" }}>
+        <div className="container-max">
+          <SectionHeading
+            eyebrow="About"
+            title="The Story Behind Apex Gold Trading"
+            subtitle="Built on 8 years of professional experience in cryptocurrency and gold (XAU/USD) markets — operating between Dubai and the UK to serve traders worldwide"
+          />
+        </div>
+      </section>
+
+      {/* Stats Bar */}
+      <section className="section-padding" style={{ paddingTop: 0, paddingBottom: "2rem" }}>
+        <div className="container-max">
+          <div
+            className="reveal-group"
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))",
+              gap: "16px",
+            }}
+          >
+            {stats.map((stat) => (
+              <div
+                key={stat.label}
+                className="card reveal"
+                style={{ textAlign: "center", padding: "24px 16px" }}
+              >
+                <p
+                  style={{
+                    fontSize: "clamp(1.5rem, 3vw, 2.25rem)",
+                    fontWeight: 700,
+                    color: "var(--color-accent-gold)",
+                    marginBottom: "6px",
+                    lineHeight: 1,
+                  }}
+                >
+                  {stat.value}
+                </p>
+                <p
+                  style={{
+                    fontSize: "var(--text-xs)",
+                    color: "var(--color-text-secondary)",
+                    textTransform: "uppercase",
+                    letterSpacing: "0.08em",
+                    margin: 0,
+                  }}
+                >
+                  {stat.label}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Founder Section */}
+      <section className="section-padding" style={{ paddingTop: "2rem" }}>
+        <div className="container-max">
+          <div
+            className="card reveal"
+            style={{ display: "flex", flexWrap: "wrap", gap: "32px", alignItems: "center" }}
+          >
+            <div style={{ width: "180px", height: "180px", flexShrink: 0, position: "relative" }}>
+              <Image
+                src="/team/shabbaranks_2.png"
+                alt="Shabbaranks — Founder"
+                fill
+                style={{ objectFit: "contain" }}
+                sizes="180px"
+              />
+            </div>
+
+            <div style={{ flex: 1, minWidth: "240px" }}>
+              <h3 style={{ fontSize: "var(--text-3xl)", marginBottom: "4px" }}>Shabbaranks</h3>
+              <p
+                style={{
+                  color: "var(--color-accent-gold)",
+                  fontSize: "var(--text-sm)",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.12em",
+                  marginBottom: "24px",
+                }}
+              >
+                Founder &amp; Lead Trader
+              </p>
+
+              <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+                <p style={{ fontSize: "var(--text-sm)", color: "var(--color-text-secondary)", lineHeight: "var(--leading-relaxed)", margin: 0 }}>
+                  A qualified Gas Safe and plumbing engineer with a diverse entrepreneurial background spanning multiple industries. His career began in the heating sector before he went on to establish and scale an ECO4 company — helping UK homeowners access government-backed grants for heating upgrades — and successfully build and exit a solar panel business.
+                </p>
+                <p style={{ fontSize: "var(--text-sm)", color: "var(--color-text-secondary)", lineHeight: "var(--leading-relaxed)", margin: 0 }}>
+                  Today he owns and operates a tyre garage, car wash, and a property investment company with his brothers. He combines that same entrepreneurial discipline with 8 years of experience trading cryptocurrency and gold (XAU/USD) markets — operating between Dubai and the UK with one clear mission: to help people create true financial freedom using just their phone or laptop, from anywhere in the world.
+                </p>
+                <p style={{ fontSize: "var(--text-sm)", color: "var(--color-text-secondary)", lineHeight: "var(--leading-relaxed)", margin: 0 }}>
+                  What began as a private Telegram community has grown into a high-performance trading brand delivering 8–10 signals per day with a reported 91% win rate — providing real-time market analysis, clear trade setups, and a professional environment for traders at every level.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Mission Statement */}
+      <section className="section-padding reveal">
+        <div className="container-max">
+          <div style={{ position: "relative", maxWidth: "800px", margin: "0 auto", textAlign: "center", padding: "0 32px" }}>
+            <span style={{ position: "absolute", top: "-16px", left: "-8px", color: "rgba(201,168,76,0.15)", fontSize: "80px", lineHeight: 1, userSelect: "none", pointerEvents: "none", fontFamily: "Georgia, serif" }}>
+              &ldquo;
+            </span>
+            <p style={{ fontSize: "clamp(1.25rem, 2.5vw, 1.75rem)", color: "var(--color-accent-gold)", fontStyle: "italic", lineHeight: "var(--leading-snug)", margin: 0 }}>
+              The mission is simple: to help you create true financial freedom using just your phone or laptop, from anywhere in the world.
+            </p>
+            <span style={{ position: "absolute", bottom: "-40px", right: "-8px", color: "rgba(201,168,76,0.15)", fontSize: "80px", lineHeight: 1, userSelect: "none", pointerEvents: "none", fontFamily: "Georgia, serif" }}>
+              &rdquo;
+            </span>
+          </div>
+        </div>
+      </section>
+
+      {/* Team */}
+      <TeamSection />
+
+      {/* Timeline */}
+      <section className="section-padding">
+        <div className="container-max">
+          <SectionHeading eyebrow="History" title="Our Journey" />
+          <div style={{ position: "relative" }}>
+            <div style={{ position: "absolute", left: "16px", top: 0, bottom: 0, width: "1px", background: "rgba(201,168,76,0.2)" }} />
+            <div style={{ display: "flex", flexDirection: "column", gap: "48px" }}>
+              {timelineEvents.map((event) => (
+                <div key={event.date} className="reveal" style={{ position: "relative", paddingLeft: "48px" }}>
+                  <div style={{ position: "absolute", left: "8px", top: "4px", width: "16px", height: "16px", borderRadius: "50%", background: "var(--color-accent-gold)", zIndex: 1 }} />
+                  <div className="card" style={{ maxWidth: "480px" }}>
+                    <p style={{ fontFamily: "var(--font-mono)", fontSize: "var(--text-sm)", color: "var(--color-accent-gold)", marginBottom: "4px" }}>{event.date}</p>
+                    <h4 style={{ marginBottom: "8px" }}>{event.title}</h4>
+                    <p style={{ fontSize: "var(--text-sm)", color: "var(--color-text-secondary)", lineHeight: "var(--leading-relaxed)", margin: 0 }}>{event.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Values */}
+      <section className="section-padding" style={{ background: "var(--color-bg-surface)" }}>
+        <div className="container-max">
+          <SectionHeading eyebrow="Philosophy" title="Our Values" />
+          <div className="reveal-group feature-grid">
+            {values.map((value) => {
+              const Icon = value.icon;
+              return (
+                <div key={value.title} className="card reveal" style={{ display: "flex", flexDirection: "column" }}>
+                  <div className="card-icon">
+                    <Icon size={20} strokeWidth={1.5} style={{ color: "var(--color-accent-gold)" }} />
+                  </div>
+                  <h3 style={{ marginBottom: "10px" }}>{value.title}</h3>
+                  <p style={{ fontSize: "var(--text-sm)", color: "var(--color-text-secondary)", lineHeight: "var(--leading-relaxed)", margin: 0, flex: 1 }}>
+                    {value.description}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Social Media */}
+      <section className="section-padding">
+        <div className="container-max">
+          <SectionHeading
+            eyebrow="Follow Us"
+            title="Stay Connected"
+            subtitle="Live signals, trade updates, and community highlights across all our channels"
+          />
+          <div
+            className="reveal-group"
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))",
+              gap: "16px",
+            }}
+          >
+            {socials.map((s) => {
+              const Icon = s.icon;
+              return (
+                <a
+                  key={s.href}
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="card reveal"
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "16px",
+                    padding: "20px",
+                    textDecoration: "none",
+                    transition: "border-color 0.15s ease, background 0.15s ease",
+                  }}
+                  onMouseEnter={(e) => {
+                    (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(201,168,76,0.4)";
+                    (e.currentTarget as HTMLAnchorElement).style.background = "rgba(201,168,76,0.04)";
+                  }}
+                  onMouseLeave={(e) => {
+                    (e.currentTarget as HTMLAnchorElement).style.borderColor = "";
+                    (e.currentTarget as HTMLAnchorElement).style.background = "";
+                  }}
+                >
+                  <div
+                    style={{
+                      width: "40px",
+                      height: "40px",
+                      borderRadius: "50%",
+                      border: "1px solid rgba(201,168,76,0.3)",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      color: "var(--color-accent-gold)",
+                      flexShrink: 0,
+                    }}
+                  >
+                    <Icon size={16} />
+                  </div>
+                  <div>
+                    <p style={{ fontSize: "var(--text-xs)", color: "var(--color-text-muted)", margin: "0 0 2px", textTransform: "uppercase", letterSpacing: "0.08em" }}>
+                      {s.label}
+                    </p>
+                    <p style={{ fontSize: "var(--text-sm)", color: "var(--color-text-primary)", fontWeight: 500, margin: 0 }}>
+                      {s.handle}
+                    </p>
+                  </div>
+                </a>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}

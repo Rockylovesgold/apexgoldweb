@@ -1,0 +1,130 @@
+
+> apexgoldawe-temp@0.1.0 dev
+> next dev
+
+ ⚠ Port 3000 is in use, trying 3001 instead.
+ ⚠ Port 3001 is in use, trying 3002 instead.
+  ▲ Next.js 14.2.35
+  - Local:        http://localhost:3002
+
+ ✓ Starting...
+ ✓ Ready in 1476ms
+ ○ Compiling / ...
+ ✓ Compiled / in 4.9s (2460 modules)
+ GET / 200 in 5184ms
+ ✓ Compiled in 401ms (1209 modules)
+ GET / 200 in 77ms
+ ○ Compiling /favicon.ico ...
+ ✓ Compiled /favicon.ico in 654ms (1265 modules)
+ GET /favicon.ico 200 in 759ms
+ ✓ Compiled in 497ms (2442 modules)
+ ✓ Compiled in 196ms (1209 modules)
+ ✓ Compiled in 441ms (2442 modules)
+ ✓ Compiled in 372ms (2442 modules)
+ ✓ Compiled in 325ms (2442 modules)
+ ✓ Compiled in 907ms (2442 modules)
+ ✓ Compiled in 363ms (2473 modules)
+ ✓ Compiled in 307ms (2473 modules)
+ ✓ Compiled /_not-found in 205ms (2462 modules)
+ GET /_next/static/css/app/layout.css?v=1773537795348 404 in 311ms
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, rename 'C:\Users\Rocky\Desktop\Rockmountailtd\apexgoldawe\.next\cache\webpack\server-development\0.pack.gz_' -> 'C:\Users\Rocky\Desktop\Rockmountailtd\apexgoldawe\.next\cache\webpack\server-development\0.pack.gz'
+ GET / 200 in 149ms
+ ✓ Compiled in 605ms (1224 modules)
+ ✓ Compiled in 167ms (1224 modules)
+ ✓ Compiled in 133ms (1224 modules)
+ ✓ Compiled in 148ms (1224 modules)
+ ✓ Compiled in 1300ms (2459 modules)
+ ✓ Compiled in 506ms (2481 modules)
+ ✓ Compiled in 321ms (2481 modules)
+ ✓ Compiled in 265ms (2481 modules)
+ ✓ Compiled in 498ms (2494 modules)
+ ✓ Compiled in 273ms (2494 modules)
+ ✓ Compiled in 289ms (2500 modules)
+ ✓ Compiled in 161ms (1236 modules)
+ ✓ Compiled in 123ms (1236 modules)
+ ✓ Compiled in 234ms (2500 modules)
+ ✓ Compiled in 331ms (2500 modules)
+ ✓ Compiled in 614ms (2498 modules)
+ ✓ Compiled in 315ms (2498 modules)
+ ✓ Compiled in 263ms (2498 modules)
+ ✓ Compiled in 433ms (2495 modules)
+ ✓ Compiled in 249ms (2495 modules)
+ ○ Compiling /_not-found ...
+ ✓ Compiled /_not-found in 684ms (2498 modules)
+ ○ Compiling /_error ...
+ ✓ Compiled /_error in 1493ms (2710 modules)
+ GET /_next/static/webpack/458a07040b5daa25.webpack.hot-update.json 404 in 2457ms
+ ⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+ GET / 404 in 30ms
+ ✓ Compiled /favicon.ico in 198ms (1334 modules)
+ GET /favicon.ico 200 in 252ms
+ ✓ Compiled in 557ms (2715 modules)
+ ✓ Compiled in 410ms (2715 modules)
+ ✓ Compiled in 353ms (2715 modules)
+ ✓ Compiled in 310ms (2715 modules)
+ ✓ Compiled in 343ms (2715 modules)
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, rename 'C:\Users\Rocky\Desktop\Rockmountailtd\apexgoldawe\.next\cache\webpack\server-development\1.pack.gz_' -> 'C:\Users\Rocky\Desktop\Rockmountailtd\apexgoldawe\.next\cache\webpack\server-development\1.pack.gz'
+ ✓ Compiled /_not-found in 222ms (2704 modules)
+ ✓ Compiled /_error in 226ms (2706 modules)
+ GET / 404 in 20ms
+ ✓ Compiled in 8.1s (2715 modules)
+ ✓ Compiled in 285ms (1417 modules)
+ ✓ Compiled in 230ms (1417 modules)
+   Reload env: .env.local
+ ✓ Compiled in 6.1s (2733 modules)
+ ✓ Compiled in 1451ms (1417 modules)
+ ✓ Compiled in 659ms (1417 modules)
+ ✓ Compiled in 1803ms (2715 modules)
+ ✓ Compiled in 1770ms (2715 modules)
+ ✓ Compiled in 1286ms (2715 modules)
+ ✓ Compiled in 1041ms (2715 modules)
+ ✓ Compiled in 421ms (1417 modules)
+ ✓ Compiled in 896ms (1417 modules)
+ ✓ Compiled in 433ms (1417 modules)
+ ✓ Compiled in 354ms (1417 modules)
+ ✓ Compiled in 288ms (1417 modules)
+ ✓ Compiled in 279ms (1417 modules)
+ ✓ Compiled in 1231ms (2715 modules)
+ ✓ Compiled in 5.1s (2928 modules)
+ ✓ Compiled in 381ms (1523 modules)
+ ✓ Compiled in 427ms (1523 modules)
+ ✓ Compiled in 2.9s (2914 modules)
+ ✓ Compiled in 1382ms (2914 modules)
+ ✓ Compiled in 842ms (2914 modules)
+ ✓ Compiled in 982ms (2914 modules)
+ ✓ Compiled in 1393ms (2914 modules)
+ ✓ Compiled in 1214ms (2914 modules)
+ ✓ Compiled in 1299ms (2914 modules)
+ ✓ Compiled in 368ms (1523 modules)
+ ✓ Compiled in 337ms (1523 modules)
+ ✓ Compiled in 293ms (1523 modules)
+ ✓ Compiled in 316ms (1523 modules)
+ ✓ Compiled in 366ms (1523 modules)
+ ✓ Compiled in 312ms (1523 modules)
+ ✓ Compiled in 269ms (1523 modules)
+ ✓ Compiled in 428ms (1523 modules)
+ ✓ Compiled in 421ms (1523 modules)
+ ✓ Compiled in 338ms (1523 modules)
+ ✓ Compiled in 462ms (1523 modules)
+ ✓ Compiled in 511ms (1523 modules)
+ ✓ Compiled in 414ms (1523 modules)
+ ✓ Compiled in 288ms (1523 modules)
+ ✓ Compiled in 343ms (1523 modules)
+ ✓ Compiled in 675ms (1523 modules)
+ ✓ Compiled in 382ms (1523 modules)
+ ✓ Compiled in 376ms (1523 modules)
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, rename 'C:\Users\Rocky\Desktop\Rockmountailtd\apexgoldawe\.next\cache\webpack\client-development\2.pack.gz_' -> 'C:\Users\Rocky\Desktop\Rockmountailtd\apexgoldawe\.next\cache\webpack\client-development\2.pack.gz'
+ ✓ Compiled in 1513ms (2914 modules)
+ ✓ Compiled in 873ms (2914 modules)
+ ✓ Compiled in 1278ms (2914 modules)
+ ✓ Compiled in 1351ms (2914 modules)
+ ✓ Compiled in 1392ms (2928 modules)
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, rename 'C:\Users\Rocky\Desktop\Rockmountailtd\apexgoldawe\.next\cache\webpack\client-development\0.pack.gz_' -> 'C:\Users\Rocky\Desktop\Rockmountailtd\apexgoldawe\.next\cache\webpack\client-development\0.pack.gz'
+ ✓ Compiled in 1032ms (2928 modules)
+ ✓ Compiled in 925ms (2914 modules)
+ ✓ Compiled in 1064ms (2914 modules)
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, rename 'C:\Users\Rocky\Desktop\Rockmountailtd\apexgoldawe\.next\cache\webpack\client-development\0.pack.gz_' -> 'C:\Users\Rocky\Desktop\Rockmountailtd\apexgoldawe\.next\cache\webpack\client-development\0.pack.gz'
+ ✓ Compiled in 1263ms (2928 modules)
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, rename 'C:\Users\Rocky\Desktop\Rockmountailtd\apexgoldawe\.next\cache\webpack\client-development\0.pack.gz_' -> 'C:\Users\Rocky\Desktop\Rockmountailtd\apexgoldawe\.next\cache\webpack\client-development\0.pack.gz'
+ ✓ Compiled in 1354ms (2928 modules)
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, rename 'C:\Users\Rocky\Desktop\Rockmountailtd\apexgoldawe\.next\cache\webpack\client-development\0.pack.gz_' -> 'C:\Users\Rocky\Desktop\Rockmountailtd\apexgoldawe\.next\cache\webpack\client-development\0.pack.gz'
