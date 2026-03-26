@@ -79,6 +79,14 @@ const team = [
       "A 36-year-old dedicated mum of two and active gold trader with a strong focus on building multiple, sustainable income streams. Passionate about developing financial independence while maintaining a balanced family life, she leads by example through consistency, discipline, and a strong work ethic. Through gold trading she has developed a deep understanding of the markets — applying strategy, patience, and continuous learning to navigate a fast-paced environment. As a lead affiliate within the Apex community, she works closely with individuals looking to learn new skills, improve their mindset, and generate additional income, offering guidance and real, practical insight at every stage of the journey.",
     socials: {},
   },
+  {
+    name: "Jono",
+    role: "Affiliate & Gold Trader",
+    image: "/team/jono_2.png",
+    description:
+      "Jono runs a successful Fire and Security business that continues to go from strength to strength. Introduced to gold trading by a close friend, it quickly became a game changer — generating consistent daily profits through structured signals, a solid understanding of market movement, and disciplined risk management. Gold has become a serious second income stream that he has fully committed to. Now he passes that knowledge on to family and friends, helping them understand the process, stay disciplined, and take advantage of the same opportunities.",
+    socials: {},
+  },
 ];
 
 const socialIcons: Record<string, React.ElementType> = {
