@@ -102,7 +102,10 @@ export default function SignalsPage() {
             <StatCounter target={stats.winRate} suffix="%" label="Win Rate" />
           </div>
           <div className="card reveal" style={{ textAlign: "center" }}>
-            <StatCounter target={stats.avgPips} prefix="+" label="Avg Pips Per Signal" />
+            <StatCounter target={20} suffix="+" label="Years Experience Between Traders" />
+          </div>
+          <div className="card reveal" style={{ textAlign: "center" }}>
+            <StatCounter target={20000} prefix="+" label="Avg Pips Per Month" />
           </div>
           <div className="card reveal" style={{ textAlign: "center" }}>
             <StatCounter target={stats.bestTrade} prefix="+" label="Best Trade This Month" />
