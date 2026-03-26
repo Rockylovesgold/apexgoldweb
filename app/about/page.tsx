@@ -71,7 +71,7 @@ export default function AboutPage() {
             className="reveal-group"
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 140px), 1fr))",
               gap: "16px",
             }}
           >
@@ -116,7 +116,7 @@ export default function AboutPage() {
             className="card reveal"
             style={{ display: "flex", flexWrap: "wrap", gap: "32px", alignItems: "center" }}
           >
-            <div style={{ width: "180px", height: "180px", flexShrink: 0, position: "relative" }}>
+            <div style={{ width: "clamp(120px, 35vw, 180px)", height: "clamp(120px, 35vw, 180px)", flexShrink: 0, position: "relative" }}>
               <Image
                 src="/team/shabbaranks_2.png"
                 alt="Shabbaranks — Founder"
@@ -159,7 +159,7 @@ export default function AboutPage() {
       {/* Mission Statement */}
       <section className="section-padding reveal">
         <div className="container-max">
-          <div style={{ position: "relative", maxWidth: "800px", margin: "0 auto", textAlign: "center", padding: "0 32px" }}>
+          <div style={{ position: "relative", maxWidth: "800px", margin: "0 auto", textAlign: "center", padding: "0 clamp(16px, 4vw, 32px)" }}>
             <span style={{ position: "absolute", top: "-16px", left: "-8px", color: "rgba(201,168,76,0.15)", fontSize: "80px", lineHeight: 1, userSelect: "none", pointerEvents: "none", fontFamily: "Georgia, serif" }}>
               &ldquo;
             </span>
@@ -233,7 +233,7 @@ export default function AboutPage() {
             className="reveal-group"
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 180px), 1fr))",
               gap: "16px",
             }}
           >

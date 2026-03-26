@@ -92,7 +92,7 @@ export default function SignalsPage() {
           className="reveal-group"
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))",
+            gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 150px), 1fr))",
             gap: "var(--space-3)",
             marginBottom: "var(--space-10)",
           }}
@@ -166,7 +166,7 @@ export default function SignalsPage() {
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 160px), 1fr))",
               gap: "16px",
             }}
           >
@@ -189,7 +189,7 @@ export default function SignalsPage() {
                   <span
                     style={{
                       display: "inline-block",
-                      fontSize: "10px",
+                      fontSize: "12px",
                       fontWeight: 600,
                       textTransform: "uppercase",
                       letterSpacing: "0.1em",

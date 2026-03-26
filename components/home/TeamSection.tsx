@@ -99,7 +99,7 @@ export function TeamSection() {
           className="reveal-group"
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
+            gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 260px), 1fr))",
             gap: "var(--space-4)",
           }}
         >
@@ -174,8 +174,8 @@ export function TeamSection() {
                           rel="noopener noreferrer"
                           aria-label={socialLabels[platform]}
                           style={{
-                            width: "32px",
-                            height: "32px",
+                            width: "44px",
+                            height: "44px",
                             borderRadius: "50%",
                             border: "1px solid rgba(255,255,255,0.1)",
                             display: "flex",

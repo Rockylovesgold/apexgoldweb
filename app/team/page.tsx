@@ -116,7 +116,7 @@ export default function TeamPage() {
             className="reveal-group"
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 280px), 1fr))",
               gap: "var(--space-6)",
             }}
           >
@@ -129,15 +129,15 @@ export default function TeamPage() {
                   flexDirection: "column",
                   alignItems: "center",
                   gap: "20px",
-                  padding: "32px 24px",
+                  padding: "clamp(16px, 4vw, 32px) clamp(14px, 4vw, 24px)",
                   textAlign: "center",
                 }}
               >
                 {/* Gold-framed Avatar */}
                 <div
                   style={{
-                    width: "160px",
-                    height: "160px",
+                    width: "clamp(120px, 35vw, 160px)",
+                    height: "clamp(120px, 35vw, 160px)",
                     flexShrink: 0,
                     position: "relative",
                   }}
@@ -193,8 +193,8 @@ export default function TeamPage() {
                             rel="noopener noreferrer"
                             aria-label={socialLabels[platform]}
                             style={{
-                              width: "36px",
-                              height: "36px",
+                              width: "44px",
+                              height: "44px",
                               borderRadius: "50%",
                               border: "1px solid rgba(201,168,76,0.3)",
                               display: "flex",
@@ -231,7 +231,7 @@ export default function TeamPage() {
         <div className="container-max">
           <div
             className="card reveal"
-            style={{ textAlign: "center", padding: "48px 32px" }}
+            style={{ textAlign: "center", padding: "clamp(24px, 5vw, 48px) clamp(16px, 4vw, 32px)" }}
           >
             <p
               style={{

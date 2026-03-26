@@ -63,7 +63,7 @@ export function Footer() {
       />
 
       <div className="container-max relative py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8 md:gap-10">
           <div className="space-y-4">
             <Link href="/" className="inline-flex items-center gap-3">
               <Image src="/logo.svg" alt="Apex Gold Trading" width={36} height={39} className="h-8 w-auto" />
@@ -154,11 +154,11 @@ export function Footer() {
                   placeholder="your@email.com"
                   required
                   aria-label="Email address for newsletter"
-                  className="w-full h-10 px-3 text-sm bg-bg-tertiary border border-white/10 rounded-md text-text-primary outline-none focus:border-gold/60 focus:ring-2 focus:ring-gold/20"
+                  className="w-full h-11 px-3 text-sm bg-bg-tertiary border border-white/10 rounded-md text-text-primary outline-none focus:border-gold/60 focus:ring-2 focus:ring-gold/20"
                 />
                 <button
                   type="submit"
-                  className="w-full h-10 px-4 bg-gold text-bg-primary rounded-md text-sm font-semibold inline-flex items-center justify-center gap-1.5 hover:brightness-110 transition"
+                  className="w-full h-11 px-4 bg-gold text-bg-primary rounded-md text-sm font-semibold inline-flex items-center justify-center gap-1.5 hover:brightness-110 transition"
                 >
                   <Send size={13} />
                   Subscribe Free

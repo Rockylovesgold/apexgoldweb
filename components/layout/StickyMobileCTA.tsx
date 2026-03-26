@@ -41,11 +41,11 @@ export function StickyMobileCTA() {
         pointerEvents: visible ? "auto" : "none",
       }}
     >
-      <div className="w-full relative bg-bg-primary/95 backdrop-blur-xl border-t border-white/10 px-4 py-3 shadow-[0_-8px_24px_rgba(0,0,0,0.35)] flex items-center gap-2">
+      <div className="w-full relative bg-bg-primary/95 backdrop-blur-xl border-t border-white/10 px-4 py-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] shadow-[0_-8px_24px_rgba(0,0,0,0.35)] flex items-center gap-3">
         <div aria-hidden className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent" />
 
         <div className="flex-1 min-w-0">
-          <p className="text-[11px] font-semibold text-text-tertiary uppercase tracking-wider">
+          <p className="text-xs font-semibold text-text-tertiary uppercase tracking-wider">
             Gold-focused trading community
           </p>
           <p className="text-sm font-semibold text-text-primary truncate">
@@ -55,7 +55,7 @@ export function StickyMobileCTA() {
 
         <Link
           href="/contact"
-          className="inline-flex items-center gap-1.5 h-10 px-4 bg-gold text-bg-primary rounded-full text-sm font-semibold whitespace-nowrap"
+          className="inline-flex items-center gap-1.5 h-11 px-5 bg-gold text-bg-primary rounded-full text-sm font-semibold whitespace-nowrap shrink-0"
         >
           Join Today
           <ArrowRight size={14} />
@@ -64,7 +64,7 @@ export function StickyMobileCTA() {
         <button
           onClick={() => setDismissed(true)}
           aria-label="Dismiss"
-          className="w-8 h-8 rounded-full bg-bg-tertiary border border-white/10 text-text-tertiary flex items-center justify-center shrink-0"
+          className="w-11 h-11 rounded-full bg-bg-tertiary border border-white/10 text-text-tertiary flex items-center justify-center shrink-0"
         >
           <X size={14} />
         </button>

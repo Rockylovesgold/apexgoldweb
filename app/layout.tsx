@@ -31,6 +31,11 @@ export const metadata: Metadata = {
     "trading community",
     "precious metals",
   ],
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    viewportFit: "cover",
+  },
 };
 
 export default function RootLayout({
