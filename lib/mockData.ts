@@ -819,33 +819,33 @@ export const faqItems: FAQItem[] = [
 
 export const timelineEvents: TimelineEvent[] = [
   {
-    date: "January 2022",
-    title: "Apex Gold Founded",
+    date: "2016",
+    title: "The Trading Journey Begins",
     description:
-      "Started as a small group of passionate gold traders sharing analysis and trade ideas in a private community.",
+      "Shabbaranks and core team members enter the financial markets, starting with cryptocurrency trading and building the discipline that would define Apex Gold.",
   },
   {
-    date: "June 2022",
-    title: "100 Members Milestone",
+    date: "2020",
+    title: "Expanding Into Forex",
     description:
-      "Reached our first 100 members through word of mouth, driven by consistent signal performance and community support.",
+      "The team broadens its market expertise into forex trading, developing institutional-grade risk management strategies and a refined approach to reading markets.",
   },
   {
-    date: "March 2023",
-    title: "1,000 Members Strong",
+    date: "2022",
+    title: "Apex Gold Trading Founded",
     description:
-      "Expanded to 1,000 active members and launched our comprehensive educational course library for all skill levels.",
+      "With a proven edge in XAU/USD gold markets, Shabbaranks launches Apex Gold Trading as a private Telegram community — sharing real-time signals and analysis with a close group of traders.",
   },
   {
-    date: "August 2023",
-    title: "Myfxbook Verification",
+    date: "2024",
+    title: "Brand Launch & Global Growth",
     description:
-      "Achieved full Myfxbook verification for complete transparency, allowing anyone to audit our trading performance in real-time.",
+      "Apex Gold Trading officially launches as a professional trading brand. The community grows to 5,000+ members worldwide, delivering 8–10 signals per day with a reported 91% win rate.",
   },
   {
-    date: "December 2024",
-    title: "5,000+ Members Worldwide",
+    date: "2026",
+    title: "New Platform & Expanded Team",
     description:
-      "Grew to over 5,000 members across 40+ countries, establishing Apex Gold as a leading gold trading community globally.",
+      "A brand new website and member platform launches alongside an expanded team of traders and educators — bringing professional-grade tools and education to the entire community.",
   },
 ];

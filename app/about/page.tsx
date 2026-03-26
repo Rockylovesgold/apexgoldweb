@@ -59,7 +59,7 @@ export default function AboutPage() {
           <SectionHeading
             eyebrow="About"
             title="The Story Behind Apex Gold Trading"
-            subtitle="Built on 8 years of professional experience in cryptocurrency and gold (XAU/USD) markets — operating between Dubai and the UK to serve traders worldwide"
+            subtitle="Founded by traders who've been in the markets since 2016 — operating between Dubai and the UK to serve traders worldwide with real-time gold signals and professional education"
           />
         </div>
       </section>
