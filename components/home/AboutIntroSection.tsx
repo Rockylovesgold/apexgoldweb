@@ -14,7 +14,7 @@ export function AboutIntroSection() {
         <SectionHeading
           eyebrow="About us"
           title="About Apex Gold Trading"
-          subtitle="A premier trading brand built on 8 years of professional experience in cryptocurrency and gold (XAU/USD) markets — operating between Dubai and the UK"
+          subtitle="A premier trading brand built on 20+ years of professional experience in cryptocurrency and gold (XAU/USD) markets — operating between Dubai and the UK"
           align="left"
         />
         <div
@@ -34,7 +34,7 @@ export function AboutIntroSection() {
                 margin: 0,
               }}
             >
-              Apex Gold Trading is a high-performance trading community supported by a private Telegram group with a reported 90% success rate on shared trade ideas and signals. Members gain access to real-time market analysis, clear trade setups, and an active community focused on disciplined, professional trading.
+              Apex Gold Trading is a high-performance trading community supported by a private Telegram group with a reported 86% success rate on shared trade ideas and signals. Members gain access to real-time market analysis, clear trade setups, and an active community focused on disciplined, professional trading.
             </p>
             <p
               style={{
@@ -61,7 +61,7 @@ export function AboutIntroSection() {
           >
             <Image
               src="/wix/55af9d_ce53566837174f5c9d2b5b1aa25e06fd~mv2.png"
-              alt="Apex Gold Trading — 90% Success Rate"
+              alt="Apex Gold Trading — 86% Success Rate"
               fill
               style={{ objectFit: "contain", padding: "24px" }}
               sizes="(max-width: 768px) 100vw, 50vw"
