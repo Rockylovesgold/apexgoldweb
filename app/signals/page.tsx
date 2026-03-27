@@ -1,35 +1,12 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import Image from "next/image";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { GoldButton } from "@/components/ui/GoldButton";
 import { StatCounter } from "@/components/ui/StatCounter";
 import SignalTable from "@/components/signals/SignalTable";
 import MonthlyChart from "@/components/signals/MonthlyChart";
 import { signals } from "@/lib/mockData";
-
-const resultScreenshots = [
-  // Actual trade results
-  { src: "/results/mt5-results-3.jpg", caption: "Closed Trades — P&L", type: "result" },
-  { src: "/results/telegram-signal-1.jpg", caption: "Live Signal — Take Profits Hit", type: "signal" },
-  { src: "/results/telegram-signal-2.jpg", caption: "Signal Results Channel", type: "signal" },
-  // Charts
-  { src: "/results/xauusd-chart-1.jpg", caption: "XAUUSD Live Chart", type: "chart" },
-  { src: "/results/xauusd-chart-2.jpg", caption: "XAUUSD Analysis", type: "chart" },
-  { src: "/results/xauusd-chart-3.jpg", caption: "XAUUSD Entry Point", type: "chart" },
-  { src: "/results/xauusd-chart-4.jpg", caption: "XAUUSD Price Action", type: "chart" },
-  { src: "/results/mt5-desktop.jpg", caption: "Professional MT5 Setup", type: "chart" },
-  // Brand / lifestyle
-  { src: "/results/vault-1.jpg", caption: "Apex Gold — Results Speak", type: "lifestyle" },
-  { src: "/results/trader-dubai.jpg", caption: "Trading from Anywhere", type: "lifestyle" },
-  { src: "/results/vault-2.jpg", caption: "Building Wealth with Apex Gold", type: "lifestyle" },
-  { src: "/results/dubai-rolls.jpg", caption: "The Apex Lifestyle — Dubai", type: "lifestyle" },
-  { src: "/brand/apex-hoodie-dubai.jpg", caption: "Apex Gold Trading — Dubai", type: "lifestyle" },
-  { src: "/brand/gold-analysis-monitor.jpg", caption: "Gold Analysis", type: "chart" },
-  { src: "/brand/gold-bar-watch-chart.jpg", caption: "Gold Trading Setup", type: "lifestyle" },
-  { src: "/brand/apex-vault-bag.jpg", caption: "Apex Gold — The Brand", type: "lifestyle" },
-];
 
 const pairFilters = [
   "All",
@@ -39,76 +16,74 @@ const pairFilters = [
 export default function SignalsPage() {
   const [pairFilter, setPairFilter] = useState<string>("All");
 
-  const filteredSignals = useMemo(
-    () =>
+  // Show only the 15 most recent as examples
+  const filteredSignals = useMemo(() => {
+    const base =
       pairFilter === "All"
         ? signals
-        : signals.filter((s) => s.pair === pairFilter),
-    [pairFilter]
-  );
+        : signals.filter((s) => s.pair === pairFilter);
+    return base.slice(0, 15);
+  }, [pairFilter]);
 
   const stats = useMemo(() => {
-    const total = filteredSignals.length;
-    const wonCount = filteredSignals.filter((s) => s.status === "won").length;
-    const closedCount = filteredSignals.filter(
-      (s) => s.status === "won" || s.status === "lost"
-    ).length;
-    const winRate = closedCount > 0 ? Math.round((wonCount / closedCount) * 100) : 0;
-    const allPips = filteredSignals.map((s) => s.pips);
-    const avgPips = total > 0 ? Math.round(allPips.reduce((sum, v) => sum + v, 0) / total) : 0;
-    const bestTrade = total > 0 ? Math.max(...allPips) : 0;
-    return { total, winRate, avgPips, bestTrade };
-  }, [filteredSignals]);
+    const all = pairFilter === "All" ? signals : signals.filter((s) => s.pair === pairFilter);
+    const closedAll = all.filter((s) => s.status === "won" || s.status === "lost");
+    const wonAll = all.filter((s) => s.status === "won");
+    const winRate = closedAll.length > 0 ? Math.round((wonAll.length / closedAll.length) * 100) : 0;
+    return { winRate };
+  }, [pairFilter]);
 
   return (
     <main style={{ minHeight: "100vh", background: "var(--color-bg-base)" }}>
       {/* Hero */}
-      <section className="section-padding" style={{ paddingTop: "8rem", paddingBottom: "4rem" }}>
+      <section className="section-padding" style={{ paddingTop: "8rem", paddingBottom: "3rem" }}>
         <div className="container-max">
           <SectionHeading
-            eyebrow="Signals"
-            title="Trade Ideas & History"
-            subtitle="Example trade ideas with entry, stop loss, and take-profit levels. For information only—not financial advice."
+            eyebrow="Live Signals — Every Day"
+            title="Trade History & Ideas"
+            subtitle="8–10 gold trading opportunities delivered every single day — entry zones, stop loss, and take-profit levels."
           />
-          <p
+          {/* Example disclaimer */}
+          <div
             style={{
-              fontSize: "var(--text-xs)",
-              color: "var(--color-text-muted)",
-              marginTop: "16px",
-              maxWidth: "640px",
+              marginTop: "20px",
+              padding: "14px 20px",
+              borderRadius: "var(--radius-md)",
+              background: "rgba(200,150,12,0.06)",
+              border: "1px solid rgba(200,150,12,0.16)",
+              maxWidth: "680px",
             }}
           >
-            Historical trade ideas. Past performance is not indicative of future
-            results. See Legal &amp; Risk for full disclosure.
-          </p>
+            <p style={{ fontSize: "var(--text-sm)", color: "var(--color-text-secondary)", margin: 0, lineHeight: "var(--leading-relaxed)" }}>
+              <span style={{ color: "var(--color-accent-gold)", fontWeight: 600 }}>Example trade ideas only.</span>{" "}
+              The signals below are illustrative examples of the type of setups we share daily in our Telegram community. Past performance is not indicative of future results. This is not financial advice.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* Performance Dashboard */}
-      <section className="section-padding container-max">
+      {/* Stats */}
+      <section className="section-padding container-max" style={{ paddingTop: 0 }}>
         <div
           className="reveal-group"
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 150px), 1fr))",
             gap: "var(--space-3)",
-            marginBottom: "var(--space-10)",
+            marginBottom: "var(--space-8)",
           }}
         >
           <div className="card reveal" style={{ textAlign: "center" }}>
-            <StatCounter target={stats.total} label="Total Signals This Month" />
+            <StatCounter target={stats.winRate} suffix="%" label="Reported Win Rate" />
           </div>
           <div className="card reveal" style={{ textAlign: "center" }}>
-            <StatCounter target={stats.winRate} suffix="%" label="Win Rate" />
-          </div>
-          <div className="card reveal" style={{ textAlign: "center" }}>
-            <StatCounter target={20} suffix="+" label="Years Experience Between Traders" />
+            <StatCounter target={20} suffix="+" label="Years Experience" />
           </div>
           <div className="card reveal" style={{ textAlign: "center" }}>
             <StatCounter target={20000} prefix="+" label="Avg Pips Per Month" />
           </div>
           <div className="card reveal" style={{ textAlign: "center" }}>
-            <StatCounter target={stats.bestTrade} prefix="+" label="Best Trade This Month" />
+            <StatCounter target={8} suffix="–10" label="Daily Signals" />
           </div>
         </div>
 
@@ -147,105 +122,23 @@ export default function SignalsPage() {
           ))}
         </div>
 
-        {/* Signal Table */}
-        <div className="reveal" style={{ marginBottom: "var(--space-10)" }}>
+        {/* Signal Table — example entries */}
+        <div className="reveal" style={{ marginBottom: "var(--space-8)" }}>
           <SignalTable signals={filteredSignals} />
-        </div>
-
-        {/* Monthly Chart */}
-        <div className="card reveal" style={{ marginBottom: "var(--space-10)" }}>
-          <MonthlyChart />
-        </div>
-
-        {/* Results Gallery */}
-        <div className="reveal" style={{ marginBottom: "var(--space-10)" }}>
-          <SectionHeading
-            eyebrow="Proof of Results"
-            title="Real Trades. Real Profits."
-            subtitle="Screenshots directly from MT5 accounts and our Telegram signal channel — unedited and timestamped."
-          />
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 160px), 1fr))",
-              gap: "16px",
-            }}
-          >
-            {resultScreenshots.map((shot) => (
-              <div
-                key={shot.src}
-                className="card reveal"
-                style={{ padding: 0, overflow: "hidden" }}
-              >
-                <div style={{ position: "relative", width: "100%", aspectRatio: "9/16", maxHeight: "340px" }}>
-                  <Image
-                    src={shot.src}
-                    alt={shot.caption}
-                    fill
-                    style={{ objectFit: "cover", objectPosition: "top" }}
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  />
-                </div>
-                <div style={{ padding: "12px 16px", borderTop: "1px solid rgba(255,255,255,0.06)" }}>
-                  <span
-                    style={{
-                      display: "inline-block",
-                      fontSize: "12px",
-                      fontWeight: 600,
-                      textTransform: "uppercase",
-                      letterSpacing: "0.1em",
-                      color:
-                        shot.type === "result"
-                          ? "#4ade80"
-                          : shot.type === "signal"
-                          ? "#60a5fa"
-                          : shot.type === "chart"
-                          ? "#a78bfa"
-                          : shot.type === "lifestyle"
-                          ? "var(--color-accent-gold)"
-                          : "rgba(255,255,255,0.5)",
-                      marginBottom: "4px",
-                    }}
-                  >
-                    {shot.type === "result"
-                      ? "Trade Result"
-                      : shot.type === "signal"
-                      ? "Live Signal"
-                      : shot.type === "chart"
-                      ? "Chart Analysis"
-                      : shot.type === "lifestyle"
-                      ? "Apex Lifestyle"
-                      : "Apex Gold"}
-                  </span>
-                  <p style={{ fontSize: "var(--text-sm)", color: "var(--color-text-secondary)", margin: 0 }}>
-                    {shot.caption}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-          <p
-            style={{
-              fontSize: "var(--text-xs)",
-              color: "var(--color-text-muted)",
-              marginTop: "16px",
-              textAlign: "center",
-            }}
-          >
-            Past results are not indicative of future performance. Trading involves risk.
+          <p style={{ fontSize: "var(--text-xs)", color: "var(--color-text-muted)", marginTop: "12px", textAlign: "center" }}>
+            Showing 15 example trade ideas. Live signals are shared exclusively in our Telegram community daily.
           </p>
         </div>
 
+        {/* Monthly Chart */}
+        <div className="card reveal" style={{ marginBottom: "var(--space-8)" }}>
+          <MonthlyChart />
+        </div>
+
         {/* CTA */}
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            paddingBottom: "6rem",
-          }}
-        >
+        <div style={{ display: "flex", justifyContent: "center", paddingBottom: "6rem" }}>
           <GoldButton variant="primary" href="/contact" showArrow>
-            Get Access to Live Signals
+            Get Live Signals Daily
           </GoldButton>
         </div>
       </section>

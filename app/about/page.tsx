@@ -15,9 +15,11 @@ function TikTokIcon({ size = 16 }: { size?: number }) {
 }
 
 const stats = [
-  { value: "8+", label: "Years Trading Experience" },
-  { value: "91%", label: "Reported Win Rate" },
-  { value: "8–10", label: "Signals Per Day" },
+  { value: "20+", label: "Years Trading Experience" },
+  { value: "86%", label: "Reported Win Rate" },
+  { value: "20+", label: "Years Experience Between Traders" },
+  { value: "8–10", label: "Daily Signals" },
+  { value: "5,000+", label: "Community Members" },
   { value: "UK & Dubai", label: "Operating Locations" },
 ];
 
@@ -71,8 +73,8 @@ export default function AboutPage() {
             className="reveal-group"
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 140px), 1fr))",
-              gap: "16px",
+              gridTemplateColumns: "repeat(3, 1fr)",
+              gap: "12px",
             }}
           >
             {stats.map((stat) => (
@@ -119,7 +121,7 @@ export default function AboutPage() {
             <div style={{ width: "clamp(120px, 35vw, 180px)", height: "clamp(120px, 35vw, 180px)", flexShrink: 0, position: "relative" }}>
               <Image
                 src="/team/shabbaranks_2.png"
-                alt="Shabbaranks — Founder"
+                alt="Anthony — Founder"
                 fill
                 style={{ objectFit: "contain" }}
                 sizes="180px"
@@ -145,7 +147,7 @@ export default function AboutPage() {
                   Anthony is the founder and lead analyst of Apex Gold Trading. With over eight years of experience across cryptocurrency and gold (XAU/USD) markets, he has developed a deep, systematic understanding of price action, market structure, and risk-managed trade execution — beginning in crypto in 2016, expanding into forex in 2020, and identifying gold as the most consistent and tradeable market from 2022 onwards.
                 </p>
                 <p style={{ fontSize: "var(--text-sm)", color: "var(--color-text-secondary)", lineHeight: "var(--leading-relaxed)", margin: 0 }}>
-                  Operating between the UK and Dubai, Anthony built the Apex Gold community from the ground up — starting as a private Telegram group and growing it into a global operation of 5,000+ members. He personally oversees the daily signal desk, delivering 8–10 structured trade ideas every day with a reported 91% win rate.
+                  Operating between the UK and Dubai, Anthony built the Apex Gold community from the ground up — starting as a private Telegram group and growing it into a global operation of 5,000+ members. He personally oversees the daily signal desk, delivering 8–10 structured trade ideas every day with a reported 86% win rate.
                 </p>
                 <p style={{ fontSize: "var(--text-sm)", color: "var(--color-text-secondary)", lineHeight: "var(--leading-relaxed)", margin: 0 }}>
                   His mission is straightforward: remove the barriers to financial markets and give everyday people access to the same opportunities as professionals — using nothing more than a phone or laptop, from anywhere in the world.
@@ -160,13 +162,13 @@ export default function AboutPage() {
       <section className="section-padding reveal">
         <div className="container-max">
           <div style={{ position: "relative", maxWidth: "800px", margin: "0 auto", textAlign: "center", padding: "0 clamp(16px, 4vw, 32px)" }}>
-            <span style={{ position: "absolute", top: "-16px", left: "-8px", color: "rgba(201,168,76,0.15)", fontSize: "80px", lineHeight: 1, userSelect: "none", pointerEvents: "none", fontFamily: "Georgia, serif" }}>
+            <span style={{ position: "absolute", top: "-16px", left: "-8px", color: "rgba(200,150,12,0.15)", fontSize: "80px", lineHeight: 1, userSelect: "none", pointerEvents: "none", fontFamily: "Georgia, serif" }}>
               &ldquo;
             </span>
             <p style={{ fontSize: "clamp(1.25rem, 2.5vw, 1.75rem)", color: "var(--color-accent-gold)", fontStyle: "italic", lineHeight: "var(--leading-snug)", margin: 0 }}>
               The mission is simple: to help you create true financial freedom using just your phone or laptop, from anywhere in the world.
             </p>
-            <span style={{ position: "absolute", bottom: "-40px", right: "-8px", color: "rgba(201,168,76,0.15)", fontSize: "80px", lineHeight: 1, userSelect: "none", pointerEvents: "none", fontFamily: "Georgia, serif" }}>
+            <span style={{ position: "absolute", bottom: "-40px", right: "-8px", color: "rgba(200,150,12,0.15)", fontSize: "80px", lineHeight: 1, userSelect: "none", pointerEvents: "none", fontFamily: "Georgia, serif" }}>
               &rdquo;
             </span>
           </div>
@@ -181,7 +183,7 @@ export default function AboutPage() {
         <div className="container-max">
           <SectionHeading eyebrow="History" title="Our Journey" />
           <div style={{ position: "relative" }}>
-            <div style={{ position: "absolute", left: "16px", top: 0, bottom: 0, width: "1px", background: "rgba(201,168,76,0.2)" }} />
+            <div style={{ position: "absolute", left: "16px", top: 0, bottom: 0, width: "1px", background: "rgba(200,150,12,0.2)" }} />
             <div style={{ display: "flex", flexDirection: "column", gap: "48px" }}>
               {timelineEvents.map((event) => (
                 <div key={event.date} className="reveal" style={{ position: "relative", paddingLeft: "48px" }}>
@@ -255,8 +257,8 @@ export default function AboutPage() {
                     transition: "border-color 0.15s ease, background 0.15s ease",
                   }}
                   onMouseEnter={(e) => {
-                    (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(201,168,76,0.4)";
-                    (e.currentTarget as HTMLAnchorElement).style.background = "rgba(201,168,76,0.04)";
+                    (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(200,150,12,0.4)";
+                    (e.currentTarget as HTMLAnchorElement).style.background = "rgba(200,150,12,0.04)";
                   }}
                   onMouseLeave={(e) => {
                     (e.currentTarget as HTMLAnchorElement).style.borderColor = "";
@@ -268,7 +270,7 @@ export default function AboutPage() {
                       width: "40px",
                       height: "40px",
                       borderRadius: "50%",
-                      border: "1px solid rgba(201,168,76,0.3)",
+                      border: "1px solid rgba(200,150,12,0.3)",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
