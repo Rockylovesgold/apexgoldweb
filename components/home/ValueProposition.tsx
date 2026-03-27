@@ -19,9 +19,9 @@ const valueCards: ValueCard[] = [
   },
   {
     icon: TrendingUp,
-    title: "90% Success Rate on Gold Signals",
+    title: "86% Success Rate on Gold Signals",
     description:
-      "Specialising in gold (XAU/USD). A reported 90% success rate on shared trade ideas with real-time market analysis and clear setups — not noise.",
+      "Specialising in gold (XAU/USD). A reported 86% success rate on shared trade ideas with real-time market analysis and clear setups — not noise.",
   },
   {
     icon: Users,
@@ -37,7 +37,7 @@ export function ValueProposition() {
       <div className="container-max">
         <SectionHeading
           eyebrow="Why Apex Gold"
-          title="Trading Experience and Market Focus"
+          title="20+ Years Trading Experience and Market Focus"
           subtitle="Credibility and clarity at the core of what we offer"
         />
 

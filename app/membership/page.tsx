@@ -98,7 +98,7 @@ const faqs = [
   },
   {
     q: "What is the verified win rate based on?",
-    a: "Our 90% success rate is calculated over closed trades (TP1 or higher hit before stop-loss). All results are logged with entry date, price, and outcome and are available for member review in the signal history library.",
+    a: "Our 86% success rate is calculated over closed trades (TP1 or higher hit before stop-loss). All results are logged with entry date, price, and outcome and are available for member review in the signal history library.",
   },
   {
     q: "Is this financial advice?",
@@ -148,8 +148,8 @@ export default function MembershipPage() {
           >
             {[
               { num: "5,000+", label: "Active members" },
-              { num: "90%",    label: "Success rate" },
-              { num: "8",      label: "Years experience" },
+              { num: "86%",    label: "Success rate" },
+              { num: "20+",    label: "Years experience" },
               { num: "£0",     label: "Lock-in cost" },
             ].map(({ num, label }) => (
               <div key={label} style={{ textAlign: "center" }}>
@@ -183,7 +183,7 @@ export default function MembershipPage() {
               style={{
                 background: tier.highlighted ? "var(--color-bg-elevated)" : "var(--color-bg-surface)",
                 border: tier.highlighted
-                  ? "1px solid rgba(201,168,76,0.35)"
+                  ? "1px solid rgba(200,150,12,0.35)"
                   : "1px solid var(--color-border-subtle)",
                 borderRadius: "var(--radius-lg)",
                 padding: "var(--space-4)",
@@ -191,7 +191,7 @@ export default function MembershipPage() {
                 flexDirection: "column",
                 position: "relative",
                 boxShadow: tier.highlighted
-                  ? "0 0 32px rgba(201,168,76,0.08)"
+                  ? "0 0 32px rgba(200,150,12,0.08)"
                   : "var(--shadow-card)",
               }}
             >
@@ -216,8 +216,8 @@ export default function MembershipPage() {
                     display: "inline-block",
                     alignSelf: "flex-start",
                     padding: "4px 12px",
-                    background: "rgba(201,168,76,0.15)",
-                    border: "1px solid rgba(201,168,76,0.3)",
+                    background: "rgba(200,150,12,0.15)",
+                    border: "1px solid rgba(200,150,12,0.3)",
                     borderRadius: "var(--radius-pill)",
                     fontSize: "var(--text-xs)",
                     fontWeight: 700,
