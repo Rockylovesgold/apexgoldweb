@@ -1,15 +1,15 @@
 "use client";
 
-import { BarChart3, Bell, Radio } from "lucide-react";
+import { Radio, Bell } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 
 const days = [
-  { label: "Mon", icon: BarChart3, desc: "Market analysis" },
+  { label: "Mon", icon: Radio, desc: "Trade alerts" },
   { label: "Tue", icon: Radio, desc: "Trade alerts" },
   { label: "Wed", icon: Bell, desc: "Active sessions" },
-  { label: "Thu", icon: BarChart3, desc: "Market analysis" },
+  { label: "Thu", icon: Radio, desc: "Trade alerts" },
   { label: "Fri", icon: Radio, desc: "Trade alerts" },
 ];
 
@@ -18,8 +18,8 @@ export function TradingOpportunitiesSection() {
     <section className="section-padding bg-bg-secondary">
       <div className="container-max">
         <SectionHeading
-          title="Every Day"
-          subtitle="Monday to Friday—analysis, alerts, and live sessions"
+          title="Trade Alerts Every Day"
+          subtitle="Monday to Friday—live alerts and active sessions"
         />
         <AnimatedSection>
           <GlassCard hover={false} className="overflow-hidden">
