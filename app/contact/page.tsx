@@ -7,11 +7,11 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { faqItems } from "@/lib/mockData";
 
 const contactDetails = [
-  { icon: Mail, label: "hello@apexgoldtrading.com" },
-  { icon: Send, label: "Join our Telegram" },
-  { icon: Phone, label: "WhatsApp Support" },
-  { icon: Clock, label: "Mon-Fri: 8:00 AM - 10:00 PM GMT" },
-  { icon: MapPin, label: "London, United Kingdom" },
+  { icon: Mail, label: "hello@apexgoldtrading.com", href: "mailto:hello@apexgoldtrading.com" },
+  { icon: Send, label: "Join our Telegram", href: "https://t.me/+Ew81mZwq2x8yNTQ8" },
+  { icon: Phone, label: "WhatsApp Support", href: undefined },
+  { icon: Clock, label: "Mon-Fri: 8:00 AM - 10:00 PM GMT", href: undefined },
+  { icon: MapPin, label: "London, United Kingdom", href: undefined },
 ];
 
 const subjectOptions = [
@@ -183,9 +183,15 @@ export default function ContactPage() {
                   return (
                     <div key={item.label} style={{ display: "flex", alignItems: "center", gap: "12px" }}>
                       <Icon size={18} style={{ color: "var(--color-accent-gold)", flexShrink: 0 }} />
-                      <span style={{ fontSize: "var(--text-sm)", color: "var(--color-text-primary)" }}>
-                        {item.label}
-                      </span>
+                      {item.href ? (
+                        <a href={item.href} target="_blank" rel="noopener noreferrer" style={{ fontSize: "var(--text-sm)", color: "var(--color-text-primary)", textDecoration: "none" }}>
+                          {item.label}
+                        </a>
+                      ) : (
+                        <span style={{ fontSize: "var(--text-sm)", color: "var(--color-text-primary)" }}>
+                          {item.label}
+                        </span>
+                      )}
                     </div>
                   );
                 })}

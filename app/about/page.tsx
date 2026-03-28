@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Eye, Users, GraduationCap, Twitter, Facebook, Send } from "lucide-react";
+import { Eye, Users, GraduationCap, Twitter, Facebook, Instagram, Send } from "lucide-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { TeamSection } from "@/components/home/TeamSection";
 import { timelineEvents } from "@/lib/mockData";
@@ -46,9 +46,10 @@ const values = [
 
 const socials = [
   { label: "Twitter / X", handle: "@apexgoldtrading", icon: Twitter, href: "https://x.com/shabbaranks333?s=21" },
-  { label: "TikTok", handle: "@apexgoldtrading", icon: TikTokIcon, href: "https://www.tiktok.com/@apexgoldtrading?_r=1&_t=ZN-94PTgXN5x4B" },
-  { label: "Facebook", handle: "Apex Gold Trading", icon: Facebook, href: "https://www.facebook.com/share/1KgV7EDWJB/?mibextid=wwXIfr" },
-  { label: "Telegram", handle: "Live Community", icon: Send, href: "https://t.me/+q1ArU5QujUJiZmVk" },
+  { label: "Instagram", handle: "@apexgoldtrading", icon: Instagram, href: "https://www.instagram.com/apexgoldtrading?igsh=MWd6NGh3bXh2YTRsMQ%3D%3D&utm_source=qr" },
+  { label: "TikTok", handle: "@apexgoldtrading", icon: TikTokIcon, href: "https://www.tiktok.com/@apexgoldtrading?_r=1&_t=ZN-954UJPWkRlO" },
+  { label: "Facebook", handle: "Apex Gold Trading", icon: Facebook, href: "https://www.facebook.com/share/1L46q81nFJ/?mibextid=wwXIfr" },
+  { label: "Telegram", handle: "Live Community", icon: Send, href: "https://t.me/+Ew81mZwq2x8yNTQ8" },
   { label: "Results Channel", handle: "Trade Results", icon: Send, href: "https://t.me/apexgoldresults" },
 ];
 

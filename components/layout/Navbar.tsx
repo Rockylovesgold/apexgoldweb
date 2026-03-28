@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 
 const navItems = [
   { label: "Home", href: "/" },
+  { label: "Signals", href: "/signals" },
   { label: "Community", href: "/community" },
   { label: "Team", href: "/team" },
   { label: "About", href: "/about" },
@@ -19,7 +20,7 @@ export function Navbar() {
   const pathname = usePathname();
 
   const handleScroll = useCallback(() => {
-    setScrolled(window.scrollY > 60);
+    setScrolled(window.scrollY > 48);
   }, []);
 
   useEffect(() => {
@@ -39,35 +40,85 @@ export function Navbar() {
   return (
     <>
       <nav
-        className={`nav-load fixed inset-x-0 top-0 z-[1000] flex h-[68px] items-center transition-all duration-normal ease-out ${
-          scrolled
-            ? "border-b border-white/10 bg-bg-primary/95 shadow-[0_1px_0_rgba(255,255,255,0.04),0_8px_32px_rgba(0,0,0,0.4)] backdrop-blur-2xl"
-            : "border-b border-transparent bg-transparent"
-        }`}
+        className="nav-load fixed inset-x-0 top-0 z-[1000] flex h-[68px] items-center transition-all duration-[350ms] ease-out"
+        style={{
+          background: scrolled
+            ? "rgba(10,11,13,0.96)"
+            : "transparent",
+          backdropFilter: scrolled ? "blur(24px) saturate(160%)" : "none",
+          WebkitBackdropFilter: scrolled ? "blur(24px) saturate(160%)" : "none",
+          borderBottom: scrolled
+            ? "1px solid rgba(200,150,12,0.18)"
+            : "1px solid transparent",
+          boxShadow: scrolled
+            ? "0 1px 0 rgba(200,150,12,0.06), 0 8px 40px rgba(0,0,0,0.5)"
+            : "none",
+        }}
       >
+        {/* Gold shimmer line at very top when scrolled */}
+        {scrolled && (
+          <div
+            aria-hidden
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              right: 0,
+              height: "1px",
+              background: "linear-gradient(90deg, transparent 0%, rgba(200,150,12,0.4) 25%, rgba(240,208,96,0.7) 50%, rgba(200,150,12,0.4) 75%, transparent 100%)",
+              pointerEvents: "none",
+            }}
+          />
+        )}
+
         <div className="container-max w-full">
-          <div className="flex h-[68px] items-center justify-between">
-            <Link href="/" className="group no-underline">
+          <div className="flex h-[68px] items-center justify-between gap-6">
+
+            {/* Logo */}
+            <Link href="/" className="group no-underline flex-shrink-0">
               <Image
                 src="/apex-gold-logo.png"
                 alt="Apex Gold Trading"
                 width={120}
                 height={120}
                 priority
-                className="h-[52px] w-auto shrink-0 transition-transform duration-fast ease-out group-hover:scale-[1.02]"
+                className="h-[52px] w-auto shrink-0 transition-all duration-300 ease-out group-hover:scale-[1.03] group-hover:drop-shadow-[0_0_12px_rgba(200,150,12,0.4)]"
               />
             </Link>
 
-            <div className="hidden items-center gap-8 lg:flex">
+            {/* Desktop Nav Links */}
+            <div className="hidden items-center gap-1 lg:flex">
               {navItems.map((item) => {
                 const isActive = pathname === item.href;
                 return (
                   <Link
                     key={item.href}
                     href={item.href}
-                    className={`nav-link-underline pb-[2px] text-[0.8125rem] font-medium tracking-[0.01em] no-underline transition-colors duration-fast ${
-                      isActive ? "active text-text-primary" : "text-text-secondary hover:text-text-primary"
-                    }`}
+                    className="no-underline"
+                    style={{
+                      padding: "6px 14px",
+                      borderRadius: "8px",
+                      fontSize: "0.8125rem",
+                      fontWeight: isActive ? 600 : 500,
+                      letterSpacing: "0.01em",
+                      color: isActive ? "#C8960C" : "rgba(168,162,158,0.9)",
+                      background: isActive ? "rgba(200,150,12,0.08)" : "transparent",
+                      border: isActive ? "1px solid rgba(200,150,12,0.16)" : "1px solid transparent",
+                      transition: "all 0.2s ease",
+                      whiteSpace: "nowrap",
+                    }}
+                    onMouseEnter={(e) => {
+                      if (!isActive) {
+                        (e.currentTarget as HTMLAnchorElement).style.color = "#F0EDE8";
+                        (e.currentTarget as HTMLAnchorElement).style.background = "rgba(255,255,255,0.04)";
+                      }
+                    }}
+                    onMouseLeave={(e) => {
+                      if (!isActive) {
+                        (e.currentTarget as HTMLAnchorElement).style.color = "rgba(168,162,158,0.9)";
+                        (e.currentTarget as HTMLAnchorElement).style.background = "transparent";
+                      }
+                    }}
                   >
                     {item.label}
                   </Link>
@@ -75,84 +126,268 @@ export function Navbar() {
               })}
             </div>
 
-            <div className="hidden items-center gap-8 lg:flex">
-              <NavCTAButton href="https://t.me/+q1ArU5QujUJiZmVk" label="Join Now" />
+            {/* Desktop CTA */}
+            <div className="hidden lg:flex items-center gap-3 flex-shrink-0">
+              <NavLoginButton href="/auth/login" label="Login" />
+              <NavCTAButton href="https://t.me/+Ew81mZwq2x8yNTQ8" label="Join Now" />
             </div>
 
+            {/* Mobile hamburger */}
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label={mobileOpen ? "Close menu" : "Open menu"}
-              className="flex h-11 w-11 flex-col items-center justify-center gap-[5px] rounded-full border border-white/10 bg-white/[0.02] p-0 lg:hidden"
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: "5px",
+                width: "44px",
+                height: "44px",
+                borderRadius: "10px",
+                border: "1px solid rgba(200,150,12,0.2)",
+                background: "rgba(200,150,12,0.04)",
+                cursor: "pointer",
+                flexShrink: 0,
+                transition: "all 0.2s ease",
+              }}
+              className="lg:hidden"
             >
               <span
-                className={`block h-[1.5px] w-5 bg-text-primary transition-all duration-fast ${
-                  mobileOpen ? "translate-y-[6.5px] rotate-45" : ""
-                }`}
+                style={{
+                  display: "block",
+                  height: "1.5px",
+                  width: "18px",
+                  background: "#C8960C",
+                  borderRadius: "2px",
+                  transition: "all 0.25s ease",
+                  transform: mobileOpen ? "translateY(6.5px) rotate(45deg)" : "none",
+                }}
               />
               <span
-                className={`block h-[1.5px] w-5 bg-text-primary transition-opacity duration-fast ${mobileOpen ? "opacity-0" : "opacity-100"}`}
+                style={{
+                  display: "block",
+                  height: "1.5px",
+                  width: "18px",
+                  background: "#F0EDE8",
+                  borderRadius: "2px",
+                  transition: "all 0.2s ease",
+                  opacity: mobileOpen ? 0 : 1,
+                }}
               />
               <span
-                className={`block h-[1.5px] w-5 bg-text-primary transition-all duration-fast ${
-                  mobileOpen ? "-translate-y-[6.5px] -rotate-45" : ""
-                }`}
+                style={{
+                  display: "block",
+                  height: "1.5px",
+                  width: "18px",
+                  background: "#C8960C",
+                  borderRadius: "2px",
+                  transition: "all 0.25s ease",
+                  transform: mobileOpen ? "translateY(-6.5px) rotate(-45deg)" : "none",
+                }}
               />
             </button>
           </div>
         </div>
       </nav>
 
+      {/* Mobile Menu Overlay */}
       <div
-        className={`fixed inset-0 z-[999] flex flex-col items-center justify-center bg-bg-primary/95 backdrop-blur-2xl transition-transform duration-normal ease-out lg:hidden ${
-          mobileOpen ? "translate-y-0 pointer-events-auto" : "-translate-y-full pointer-events-none"
-        }`}
+        className="lg:hidden"
+        style={{
+          position: "fixed",
+          inset: 0,
+          zIndex: 999,
+          display: "flex",
+          flexDirection: "column",
+          background: "rgba(10,11,13,0.98)",
+          backdropFilter: "blur(28px)",
+          WebkitBackdropFilter: "blur(28px)",
+          transform: mobileOpen ? "translateY(0)" : "translateY(-100%)",
+          transition: "transform 0.35s cubic-bezier(0.22, 1, 0.36, 1)",
+          pointerEvents: mobileOpen ? "auto" : "none",
+          overflowY: "auto",
+        }}
       >
-        <nav className="flex w-full flex-col items-center">
+        {/* Gold line at top */}
+        <div style={{ height: "1px", background: "linear-gradient(90deg, transparent, rgba(200,150,12,0.6), rgba(240,208,96,0.9), rgba(200,150,12,0.6), transparent)", flexShrink: 0 }} />
+
+        {/* Logo in mobile menu */}
+        <div style={{ padding: "20px 24px 0", display: "flex", justifyContent: "center", flexShrink: 0 }}>
+          <Image src="/apex-gold-logo.png" alt="Apex Gold Trading" width={80} height={80} className="h-[60px] w-auto" />
+        </div>
+
+        {/* Nav links */}
+        <nav style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", padding: "8px 24px" }}>
           {navItems.map((item, index) => {
             const isActive = pathname === item.href;
             return (
               <Link
                 key={item.href}
                 href={item.href}
-                className={`block w-full border-b border-white/5 px-6 py-[18px] text-center text-[1.75rem] tracking-[-0.02em] no-underline transition-all duration-normal ease-out ${
-                  isActive ? "font-bold text-text-primary" : "font-medium text-text-secondary"
-                } ${mobileOpen ? "translate-y-0 opacity-100" : "-translate-y-2 opacity-0"}`}
+                className="no-underline"
                 style={{
-                  transitionDelay: `${100 + index * 55}ms`,
+                  display: "block",
+                  padding: "16px 20px",
+                  fontSize: "1.375rem",
+                  fontWeight: isActive ? 700 : 500,
+                  color: isActive ? "#C8960C" : "rgba(240,237,232,0.85)",
+                  borderBottom: "1px solid rgba(255,255,255,0.05)",
+                  letterSpacing: "-0.01em",
+                  transition: "all 0.25s ease",
+                  opacity: mobileOpen ? 1 : 0,
+                  transform: mobileOpen ? "translateX(0)" : "translateX(-16px)",
+                  transitionDelay: mobileOpen ? `${80 + index * 45}ms` : "0ms",
+                  background: isActive ? "rgba(200,150,12,0.06)" : "transparent",
+                  borderRadius: isActive ? "10px" : "0",
+                  marginBottom: isActive ? "2px" : "0",
                 }}
               >
+                {isActive && (
+                  <span style={{ display: "inline-block", width: "4px", height: "4px", borderRadius: "50%", background: "#C8960C", marginRight: "10px", verticalAlign: "middle", marginBottom: "2px" }} />
+                )}
                 {item.label}
               </Link>
             );
           })}
         </nav>
 
+        {/* Mobile CTA */}
         <div
-          className={`mt-9 flex flex-col items-center gap-4 transition-all duration-normal ease-out ${
-            mobileOpen ? "translate-y-0 opacity-100" : "-translate-y-2 opacity-0"
-          }`}
           style={{
-            transitionDelay: `${100 + navItems.length * 55}ms`,
+            padding: "24px",
+            flexShrink: 0,
+            display: "flex",
+            flexDirection: "column",
+            gap: "12px",
+            opacity: mobileOpen ? 1 : 0,
+            transform: mobileOpen ? "translateY(0)" : "translateY(12px)",
+            transition: "all 0.3s ease",
+            transitionDelay: mobileOpen ? `${80 + navItems.length * 45}ms` : "0ms",
           }}
         >
-          <NavCTAButton href="https://t.me/+q1ArU5QujUJiZmVk" label="Join the Community" fullWidth />
+          <a
+            href="https://t.me/+Ew81mZwq2x8yNTQ8"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              width: "100%",
+              height: "52px",
+              borderRadius: "9999px",
+              background: "linear-gradient(135deg, #F0D060 0%, #C8960C 60%, #A07808 100%)",
+              color: "#0a0b0d",
+              fontWeight: 700,
+              fontSize: "1rem",
+              letterSpacing: "0.01em",
+              textDecoration: "none",
+              boxShadow: "0 4px 20px rgba(200,150,12,0.35)",
+            }}
+          >
+            Join the Community
+          </a>
+          <a
+            href="/auth/login"
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              width: "100%",
+              height: "48px",
+              borderRadius: "9999px",
+              background: "transparent",
+              border: "1px solid rgba(200,150,12,0.3)",
+              color: "rgba(240,237,232,0.85)",
+              fontWeight: 600,
+              fontSize: "0.9375rem",
+              textDecoration: "none",
+            }}
+          >
+            App Login
+          </a>
+          <p style={{ textAlign: "center", fontSize: "0.75rem", color: "rgba(168,162,158,0.5)", marginTop: "2px", letterSpacing: "0.04em" }}>
+            Free to join · Signals sent daily
+          </p>
         </div>
+
+        {/* Gold line at bottom */}
+        <div style={{ height: "1px", background: "linear-gradient(90deg, transparent, rgba(200,150,12,0.4), transparent)", flexShrink: 0 }} />
       </div>
     </>
   );
 }
 
-function NavCTAButton({ href, label, fullWidth }: { href: string; label: string; fullWidth?: boolean }) {
+function NavLoginButton({ href, label }: { href: string; label: string }) {
+  return (
+    <Link
+      href={href}
+      style={{
+        display: "inline-flex",
+        alignItems: "center",
+        height: "38px",
+        padding: "0 18px",
+        borderRadius: "9999px",
+        background: "transparent",
+        border: "1px solid rgba(200,150,12,0.3)",
+        color: "rgba(240,237,232,0.8)",
+        fontWeight: 600,
+        fontSize: "0.8125rem",
+        letterSpacing: "0.01em",
+        textDecoration: "none",
+        whiteSpace: "nowrap",
+        transition: "all 0.2s ease",
+      }}
+      onMouseEnter={(e) => {
+        (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(200,150,12,0.6)";
+        (e.currentTarget as HTMLAnchorElement).style.color = "#C8960C";
+        (e.currentTarget as HTMLAnchorElement).style.background = "rgba(200,150,12,0.06)";
+      }}
+      onMouseLeave={(e) => {
+        (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(200,150,12,0.3)";
+        (e.currentTarget as HTMLAnchorElement).style.color = "rgba(240,237,232,0.8)";
+        (e.currentTarget as HTMLAnchorElement).style.background = "transparent";
+      }}
+    >
+      {label}
+    </Link>
+  );
+}
+
+function NavCTAButton({ href, label }: { href: string; label: string }) {
   const isExternal = href.startsWith("http");
   return (
     <Link
       href={href}
       target={isExternal ? "_blank" : undefined}
       rel={isExternal ? "noopener noreferrer" : undefined}
-      className={`inline-flex h-[38px] items-center gap-0 whitespace-nowrap rounded-full bg-gold px-[18px] text-[0.8125rem] font-semibold tracking-[0.01em] text-text-inverse no-underline transition-all duration-fast ease-out hover:-translate-y-px hover:brightness-110 hover:shadow-[0_4px_20px_rgba(201,168,76,0.28)] ${
-        fullWidth ? "w-[calc(100%-48px)] justify-center" : "justify-start"
-      }`}
-      style={fullWidth ? { width: "calc(100% - 48px)" } : undefined}
+      style={{
+        display: "inline-flex",
+        alignItems: "center",
+        height: "38px",
+        padding: "0 20px",
+        borderRadius: "9999px",
+        background: "linear-gradient(135deg, #F0D060 0%, #C8960C 60%, #A07808 100%)",
+        color: "#0a0b0d",
+        fontWeight: 700,
+        fontSize: "0.8125rem",
+        letterSpacing: "0.01em",
+        textDecoration: "none",
+        whiteSpace: "nowrap",
+        boxShadow: "0 2px 12px rgba(200,150,12,0.25)",
+        transition: "all 0.2s ease",
+      }}
+      onMouseEnter={(e) => {
+        (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(-1px)";
+        (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 6px 24px rgba(200,150,12,0.4)";
+        (e.currentTarget as HTMLAnchorElement).style.filter = "brightness(1.08)";
+      }}
+      onMouseLeave={(e) => {
+        (e.currentTarget as HTMLAnchorElement).style.transform = "";
+        (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 2px 12px rgba(200,150,12,0.25)";
+        (e.currentTarget as HTMLAnchorElement).style.filter = "";
+      }}
     >
       {label}
     </Link>

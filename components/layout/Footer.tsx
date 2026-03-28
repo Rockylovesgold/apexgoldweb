@@ -7,6 +7,7 @@ import {
   Twitter,
   Send,
   Facebook,
+  Instagram,
   CheckCircle,
   ArrowRight,
   MapPin,
@@ -41,9 +42,10 @@ const resourceLinks = [
 
 const socialLinks = [
   { icon: Twitter, href: "https://x.com/shabbaranks333?s=21", label: "Twitter / X" },
-  { icon: TikTokIcon, href: "https://www.tiktok.com/@apexgoldtrading?_r=1&_t=ZN-94PTgXN5x4B", label: "TikTok" },
-  { icon: Facebook, href: "https://www.facebook.com/share/1KgV7EDWJB/?mibextid=wwXIfr", label: "Facebook" },
-  { icon: Send, href: "https://t.me/+q1ArU5QujUJiZmVk", label: "Telegram" },
+  { icon: Instagram, href: "https://www.instagram.com/apexgoldtrading?igsh=MWd6NGh3bXh2YTRsMQ%3D%3D&utm_source=qr", label: "Instagram" },
+  { icon: TikTokIcon, href: "https://www.tiktok.com/@apexgoldtrading?_r=1&_t=ZN-954UJPWkRlO", label: "TikTok" },
+  { icon: Facebook, href: "https://www.facebook.com/share/1L46q81nFJ/?mibextid=wwXIfr", label: "Facebook" },
+  { icon: Send, href: "https://t.me/+Ew81mZwq2x8yNTQ8", label: "Telegram" },
 ];
 
 export function Footer() {
@@ -59,7 +61,7 @@ export function Footer() {
     <footer className="relative overflow-hidden bg-bg-secondary border-t border-white/10">
       <div
         aria-hidden
-        className="absolute -top-24 -left-20 w-[420px] h-[420px] rounded-full bg-[radial-gradient(circle,rgba(201,168,76,0.05)_0%,transparent_65%)] pointer-events-none"
+        className="absolute -top-24 -left-20 w-[420px] h-[420px] rounded-full bg-[radial-gradient(circle,rgba(200,150,12,0.05)_0%,transparent_65%)] pointer-events-none"
       />
 
       <div className="container-max relative py-16">

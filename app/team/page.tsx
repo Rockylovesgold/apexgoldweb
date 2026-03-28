@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Twitter, Facebook, Send } from "lucide-react";
+import { Twitter, Facebook, Instagram, Send } from "lucide-react";
 
 function TikTokIcon({ size = 15 }: { size?: number }) {
   return (
@@ -18,7 +18,7 @@ const team = [
     role: "Founder & Lead Trader",
     image: "/team/shabbaranks_2.png",
     description:
-      "Anthony is the founder and lead analyst of Apex Gold Trading. With over eight years of experience across cryptocurrency and gold (XAU/USD) markets, he has developed a deep, systematic understanding of price action, market structure, and risk-managed trade execution. Beginning in crypto in 2016, he expanded into forex in 2020 before identifying gold as the most consistent and tradeable market — a conviction that became the foundation of everything Apex Gold stands for. Operating between the UK and Dubai, Anthony built the community from the ground up — starting as a private Telegram group and growing it into a global operation of 5,000+ members. He personally oversees the daily signal desk, delivering 8–10 structured trade ideas every day with a reported 91% win rate. His mission is straightforward: remove the barriers to financial markets and give everyday people access to the same opportunities as professionals.",
+      "Anthony is the founder and lead analyst of Apex Gold Trading. With over eight years of experience across cryptocurrency and gold (XAU/USD) markets, he has developed a deep, systematic understanding of price action, market structure, and risk-managed trade execution. Beginning in crypto in 2016, he expanded into forex in 2020 before identifying gold as the most consistent and tradeable market — a conviction that became the foundation of everything Apex Gold stands for. Operating between the UK and Dubai, Anthony built the community from the ground up — starting as a private Telegram group and growing it into a global operation of 5,000+ members. He personally oversees the daily signal desk, delivering 8–10 structured trade ideas every day with a reported 86% win rate. His mission is straightforward: remove the barriers to financial markets and give everyday people access to the same opportunities as professionals.",
     socials: {
       twitter: "https://x.com/shabbaranks333?s=21",
     },
@@ -204,7 +204,7 @@ export default function TeamPage() {
                               width: "44px",
                               height: "44px",
                               borderRadius: "50%",
-                              border: "1px solid rgba(201,168,76,0.3)",
+                              border: "1px solid rgba(200,150,12,0.3)",
                               display: "flex",
                               alignItems: "center",
                               justifyContent: "center",
@@ -213,12 +213,12 @@ export default function TeamPage() {
                               transition: "all 0.15s ease",
                             }}
                             onMouseEnter={(e) => {
-                              (e.currentTarget as HTMLAnchorElement).style.background = "rgba(201,168,76,0.1)";
-                              (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(201,168,76,0.6)";
+                              (e.currentTarget as HTMLAnchorElement).style.background = "rgba(200,150,12,0.1)";
+                              (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(200,150,12,0.6)";
                             }}
                             onMouseLeave={(e) => {
                               (e.currentTarget as HTMLAnchorElement).style.background = "transparent";
-                              (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(201,168,76,0.3)";
+                              (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(200,150,12,0.3)";
                             }}
                           >
                             <Icon size={14} />
@@ -269,9 +269,10 @@ export default function TeamPage() {
             <div style={{ display: "flex", justifyContent: "center", gap: "12px", flexWrap: "wrap" }}>
               {[
                 { icon: Twitter, href: "https://x.com/shabbaranks333?s=21", label: "Twitter / X" },
-                { icon: TikTokIcon, href: "https://www.tiktok.com/@apexgoldtrading?_r=1&_t=ZN-94PTgXN5x4B", label: "TikTok" },
-                { icon: Facebook, href: "https://www.facebook.com/share/1KgV7EDWJB/?mibextid=wwXIfr", label: "Facebook" },
-                { icon: Send, href: "https://t.me/+q1ArU5QujUJiZmVk", label: "Telegram" },
+                { icon: Instagram, href: "https://www.instagram.com/apexgoldtrading?igsh=MWd6NGh3bXh2YTRsMQ%3D%3D&utm_source=qr", label: "Instagram" },
+                { icon: TikTokIcon, href: "https://www.tiktok.com/@apexgoldtrading?_r=1&_t=ZN-954UJPWkRlO", label: "TikTok" },
+                { icon: Facebook, href: "https://www.facebook.com/share/1L46q81nFJ/?mibextid=wwXIfr", label: "Facebook" },
+                { icon: Send, href: "https://t.me/+Ew81mZwq2x8yNTQ8", label: "Telegram" },
               ].map(({ icon: Icon, href, label }) => (
                 <a
                   key={label}
@@ -285,7 +286,7 @@ export default function TeamPage() {
                     height: "44px",
                     padding: "0 20px",
                     borderRadius: "9999px",
-                    border: "1px solid rgba(201,168,76,0.3)",
+                    border: "1px solid rgba(200,150,12,0.3)",
                     color: "var(--color-text-secondary)",
                     fontSize: "var(--text-sm)",
                     fontWeight: 500,
@@ -293,12 +294,12 @@ export default function TeamPage() {
                     transition: "all 0.15s ease",
                   }}
                   onMouseEnter={(e) => {
-                    (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(201,168,76,0.6)";
+                    (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(200,150,12,0.6)";
                     (e.currentTarget as HTMLAnchorElement).style.color = "var(--color-accent-gold)";
-                    (e.currentTarget as HTMLAnchorElement).style.background = "rgba(201,168,76,0.05)";
+                    (e.currentTarget as HTMLAnchorElement).style.background = "rgba(200,150,12,0.05)";
                   }}
                   onMouseLeave={(e) => {
-                    (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(201,168,76,0.3)";
+                    (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(200,150,12,0.3)";
                     (e.currentTarget as HTMLAnchorElement).style.color = "var(--color-text-secondary)";
                     (e.currentTarget as HTMLAnchorElement).style.background = "transparent";
                   }}
@@ -344,7 +345,7 @@ export default function TeamPage() {
             Get real-time signals, live analysis, and direct access to the traders behind Apex Gold.
           </p>
           <a
-            href="https://t.me/+q1ArU5QujUJiZmVk"
+            href="https://t.me/+Ew81mZwq2x8yNTQ8"
             target="_blank"
             rel="noopener noreferrer"
             style={{

@@ -113,7 +113,7 @@ function HeroCanvas() {
       ctx.lineWidth = 0.5;
       for (let g = 1; g <= 5; g++) {
         const y = toY(h, g / 6);
-        ctx.strokeStyle = `rgba(201, 168, 76, 0.045)`;
+        ctx.strokeStyle = `rgba(200, 150, 12, 0.045)`;
         ctx.beginPath();
         ctx.moveTo(0, y);
         ctx.lineTo(w, y);
@@ -125,7 +125,7 @@ function HeroCanvas() {
       const gridPhase = state.scrollOffset % gridSpacing;
       for (let gx = -gridSpacing; gx <= w + gridSpacing; gx += gridSpacing) {
         const x = gx + gridSpacing - gridPhase;
-        ctx.strokeStyle = `rgba(201, 168, 76, 0.028)`;
+        ctx.strokeStyle = `rgba(200, 150, 12, 0.028)`;
         ctx.beginPath();
         ctx.moveTo(x, 0);
         ctx.lineTo(x, h);
@@ -157,7 +157,7 @@ function HeroCanvas() {
         /* ── Wick ── */
         ctx.lineWidth = 1.2;
         ctx.strokeStyle = bull
-          ? `rgba(201, 168, 76, ${0.42 * alpha})`
+          ? `rgba(200, 150, 12, ${0.42 * alpha})`
           : `rgba(160, 95, 22, ${0.35 * alpha})`;
         ctx.beginPath();
         ctx.moveTo(cx, wTop);
@@ -166,7 +166,7 @@ function HeroCanvas() {
 
         /* ── Body fill ── */
         ctx.fillStyle = bull
-          ? `rgba(201, 168, 76, ${0.34 * alpha})`
+          ? `rgba(200, 150, 12, ${0.34 * alpha})`
           : `rgba(110, 60, 10, ${0.28 * alpha})`;
         ctx.fillRect(screenX, bTop, CW, bH);
 
@@ -182,7 +182,7 @@ function HeroCanvas() {
       const currentY = toY(h, state.priceLevel);
       const grad = ctx.createLinearGradient(0, currentY - 20, 0, currentY + 20);
       grad.addColorStop(0, "transparent");
-      grad.addColorStop(0.5, "rgba(201, 168, 76, 0.04)");
+      grad.addColorStop(0.5, "rgba(200, 150, 12, 0.04)");
       grad.addColorStop(1, "transparent");
       ctx.fillStyle = grad;
       ctx.fillRect(0, currentY - 20, w, 40);
@@ -317,7 +317,7 @@ export function HeroSection() {
           position: "absolute",
           inset: 0,
           background:
-            "radial-gradient(ellipse 72% 55% at 50% 42%, rgba(201,168,76,0.07) 0%, transparent 68%)",
+            "radial-gradient(ellipse 72% 55% at 50% 42%, rgba(200,150,12,0.07) 0%, transparent 68%)",
           zIndex: 2,
           pointerEvents: "none",
         }}
@@ -394,7 +394,7 @@ export function HeroSection() {
             </p>
 
             <div className="hero-cta mt-5 flex flex-wrap justify-center gap-2 lg:justify-start">
-              <GoldButton variant="primary" size="lg" href="https://t.me/+q1ArU5QujUJiZmVk" showArrow>
+              <GoldButton variant="primary" size="lg" href="https://t.me/+Ew81mZwq2x8yNTQ8" showArrow>
                 Join the Community
               </GoldButton>
               <GoldButton variant="secondary" size="lg" href="/about">

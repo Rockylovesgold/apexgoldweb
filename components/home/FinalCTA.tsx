@@ -25,7 +25,7 @@ export function FinalCTA() {
             Join the Apex Gold Trading community. Gold-focused analysis, trade ideas, and education in one high-trust environment.
           </p>
           <div style={{ display: "flex", flexWrap: "wrap", gap: "var(--space-2)", justifyContent: "center" }}>
-            <GoldButton variant="primary" size="lg" href="https://t.me/+q1ArU5QujUJiZmVk" showArrow>
+            <GoldButton variant="primary" size="lg" href="https://t.me/+Ew81mZwq2x8yNTQ8" showArrow>
               Join the Community
             </GoldButton>
             <GoldButton variant="secondary" size="lg" href="/about">
