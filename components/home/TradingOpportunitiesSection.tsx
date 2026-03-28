@@ -18,7 +18,7 @@ export function TradingOpportunitiesSection() {
     <section className="section-padding bg-bg-secondary">
       <div className="container-max">
         <SectionHeading
-          title="Trading Opportunities"
+          title="Every Day"
           subtitle="Monday to Friday—analysis, alerts, and live sessions"
         />
         <AnimatedSection>
