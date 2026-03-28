@@ -73,7 +73,7 @@ export function Footer() {
             <p className="text-sm text-text-tertiary max-w-xs">
               A premium gold-focused trading community built on discipline, structure, and execution.
             </p>
-            <div className="flex items-center gap-2">
+            <div className="flex flex-wrap gap-2">
               {socialLinks.map((social) => (
                 <a
                   key={social.label}
@@ -81,9 +81,10 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  className="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-text-tertiary hover:text-text-primary hover:border-white/20 hover:scale-110 transition-all duration-fast"
+                  className="flex items-center gap-1.5 px-3 h-9 rounded-full border border-gold/30 text-gold/70 hover:text-gold hover:border-gold/60 hover:bg-gold/10 hover:scale-105 transition-all duration-fast text-xs font-medium"
                 >
                   <social.icon size={14} />
+                  <span>{social.label}</span>
                 </a>
               ))}
             </div>

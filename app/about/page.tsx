@@ -255,23 +255,28 @@ export default function AboutPage() {
                     gap: "16px",
                     padding: "20px",
                     textDecoration: "none",
-                    transition: "border-color 0.15s ease, background 0.15s ease",
+                    border: "1px solid rgba(200,150,12,0.35)",
+                    background: "rgba(200,150,12,0.04)",
+                    transition: "border-color 0.15s ease, background 0.15s ease, transform 0.15s ease",
                   }}
                   onMouseEnter={(e) => {
-                    (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(200,150,12,0.4)";
-                    (e.currentTarget as HTMLAnchorElement).style.background = "rgba(200,150,12,0.04)";
+                    (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(200,150,12,0.65)";
+                    (e.currentTarget as HTMLAnchorElement).style.background = "rgba(200,150,12,0.1)";
+                    (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(-2px)";
                   }}
                   onMouseLeave={(e) => {
-                    (e.currentTarget as HTMLAnchorElement).style.borderColor = "";
-                    (e.currentTarget as HTMLAnchorElement).style.background = "";
+                    (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(200,150,12,0.35)";
+                    (e.currentTarget as HTMLAnchorElement).style.background = "rgba(200,150,12,0.04)";
+                    (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(0)";
                   }}
                 >
                   <div
                     style={{
-                      width: "40px",
-                      height: "40px",
+                      width: "44px",
+                      height: "44px",
                       borderRadius: "50%",
-                      border: "1px solid rgba(200,150,12,0.3)",
+                      border: "1px solid rgba(200,150,12,0.5)",
+                      background: "rgba(200,150,12,0.1)",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
@@ -279,7 +284,7 @@ export default function AboutPage() {
                       flexShrink: 0,
                     }}
                   >
-                    <Icon size={16} />
+                    <Icon size={18} />
                   </div>
                   <div>
                     <p style={{ fontSize: "var(--text-xs)", color: "var(--color-text-muted)", margin: "0 0 2px", textTransform: "uppercase", letterSpacing: "0.08em" }}>
