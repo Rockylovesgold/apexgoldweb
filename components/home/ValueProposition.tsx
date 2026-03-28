@@ -13,9 +13,9 @@ interface ValueCard {
 const valueCards: ValueCard[] = [
   {
     icon: Clock,
-    title: "8 Years of Professional Experience",
+    title: "20 Years of Professional Experience",
     description:
-      "Built on 8 years of experience across cryptocurrency and gold (XAU/USD) markets, operating between Dubai and the UK. We focus on what works in real conditions.",
+      "Built on 20 years of experience across cryptocurrency and gold (XAU/USD) markets, operating between Dubai and the UK. We focus on what works in real conditions.",
   },
   {
     icon: TrendingUp,
