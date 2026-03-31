@@ -34,7 +34,7 @@ export default function AppHeader() {
 
   const initials = profile?.display_name
     ? profile.display_name.split(' ').map((n: string) => n[0]).join('').toUpperCase().slice(0, 2)
-    : 'NA'
+    : '?'
 
   return (
     <header
