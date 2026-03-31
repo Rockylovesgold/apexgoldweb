@@ -22,7 +22,6 @@ const quickLinks = [
   { label: "Home", href: "/" },
   { label: "Community", href: "/community" },
   { label: "Team", href: "/team" },
-  { label: "Membership", href: "/membership" },
   { label: "Trade Ideas", href: "/signals" },
   { label: "Education", href: "/education" },
   { label: "About", href: "/about" },
