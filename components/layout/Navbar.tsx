@@ -128,7 +128,7 @@ export function Navbar() {
 
             {/* Desktop CTA */}
             <div className="hidden lg:flex items-center gap-3 flex-shrink-0">
-              <NavLoginButton href="/auth/login" label="Login" />
+              <NavLoginButton href="https://apextradingxau.com" label="Login" />
               <NavCTAButton href="https://t.me/+Ew81mZwq2x8yNTQ8" label="Join Now" />
             </div>
 
@@ -289,7 +289,9 @@ export function Navbar() {
             Join the Community
           </a>
           <a
-            href="/auth/login"
+            href="https://apextradingxau.com"
+            target="_blank"
+            rel="noopener noreferrer"
             style={{
               display: "flex",
               alignItems: "center",
@@ -320,9 +322,12 @@ export function Navbar() {
 }
 
 function NavLoginButton({ href, label }: { href: string; label: string }) {
+  const isExternal = href.startsWith("http");
   return (
     <Link
       href={href}
+      target={isExternal ? "_blank" : undefined}
+      rel={isExternal ? "noopener noreferrer" : undefined}
       style={{
         display: "inline-flex",
         alignItems: "center",
