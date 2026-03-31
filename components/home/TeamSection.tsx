@@ -16,7 +16,7 @@ const team = [
     },
   },
   {
-    name: "Nav",
+    name: "Naveed",
     role: "Founding Member",
     image: "/team/nav_2.png",
     description:

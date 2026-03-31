@@ -8,7 +8,7 @@ import { ArrowRight, X } from "lucide-react";
 /**
  * Sticky bottom bar — visible on mobile only (lg:hidden via inline media query).
  * Appears after the user scrolls past 300px. Has a dismiss button.
- * Hidden on /contact and /membership pages (natural conversion pages).
+ * Hidden on /contact page (natural conversion page).
  */
 export function StickyMobileCTA() {
   const [visible, setVisible] = useState(false);
@@ -16,7 +16,7 @@ export function StickyMobileCTA() {
   const pathname = usePathname();
 
   // Don't show on pages that are already conversion-focused
-  const hidden = ["/contact", "/membership"].includes(pathname);
+  const hidden = ["/contact"].includes(pathname);
 
   useEffect(() => {
     if (hidden || dismissed) return;
