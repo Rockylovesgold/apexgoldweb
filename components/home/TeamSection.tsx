@@ -10,7 +10,7 @@ const team = [
     role: "Founder & Lead Trader",
     image: "/team/shabbaranks_2.png",
     description:
-      "Anthony is the founder and lead analyst of Apex Gold Trading. With over eight years of experience across cryptocurrency and gold (XAU/USD) markets, he has developed a deep, systematic understanding of price action, market structure, and risk-managed trade execution. Beginning in crypto in 2016, he expanded into forex in 2020 before identifying gold as the most consistent and tradeable market — a conviction that became the foundation of everything Apex Gold stands for. Operating between the UK and Dubai, Anthony built the community from the ground up — starting as a private Telegram group and growing it into a global operation of 5,000+ members. He personally oversees the daily signal desk, delivering 8–10 structured trade ideas every day with a reported 91% win rate. His mission is straightforward: remove the barriers to financial markets and give everyday people access to the same opportunities as professionals.",
+      "Anthony is the founder and lead analyst of Apex Gold Trading. With over eight years of experience across cryptocurrency and gold (XAU/USD) markets, he has developed a deep, systematic understanding of price action, market structure, and risk-managed trade execution. Beginning in crypto in 2016, he expanded into forex in 2020 before identifying gold as the most consistent and tradeable market — a conviction that became the foundation of everything Apex Gold stands for. Operating between the UK and Dubai, Anthony built the community from the ground up — starting as a private Telegram group and growing it into a global operation of 5,000+ members. He personally oversees the daily signal desk, delivering 8–10 structured trade ideas every day with a reported 86% win rate. His mission is straightforward: remove the barriers to financial markets and give everyday people access to the same opportunities as professionals.",
     socials: {
       twitter: "https://x.com/shabbaranks333?s=21",
     },
@@ -77,6 +77,14 @@ const team = [
     image: "/team/jono_2.png",
     description:
       "Jono runs a successful Fire and Security business that continues to go from strength to strength. Introduced to gold trading by a close friend, it quickly became a game changer — generating consistent daily profits through structured signals, a solid understanding of market movement, and disciplined risk management. Gold has become a serious second income stream that he has fully committed to. Now he passes that knowledge on to family and friends, helping them understand the process, stay disciplined, and take advantage of the same opportunities.",
+    socials: {},
+  },
+  {
+    name: "Keeva",
+    role: "Affiliate & Gold Trader",
+    image: "/team/keeva_2.png",
+    description:
+      "A hardworking, grounded individual with a strong background as a professional ground worker, where discipline, resilience, and consistency have always been part of his daily life. Alongside his trade, he spent the last seven years building his knowledge and experience in the stock market, developing a sharp eye for opportunities and a steady approach to risk. Recently, he made the shift into trading gold — an opportunity that came through a trusted friend. In just three months, that move has proven life changing, opening doors he hadn't imagined possible. Through focus, adaptability, and commitment, he has been able to step away from full-time work and pursue trading as a primary path. Driven by growth, both personally and financially, he is always looking to evolve, learn, and make the most of the opportunities in front of him.",
     socials: {},
   },
 ];
@@ -195,7 +203,7 @@ export function TeamSection() {
                           }}
                           onMouseEnter={(e) => {
                             (e.currentTarget as HTMLAnchorElement).style.color = "var(--color-accent-gold)";
-                            (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(201,168,76,0.4)";
+                            (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(200,150,12,0.4)";
                           }}
                           onMouseLeave={(e) => {
                             (e.currentTarget as HTMLAnchorElement).style.color = "var(--color-text-tertiary)";

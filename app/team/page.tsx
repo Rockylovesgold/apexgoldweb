@@ -87,6 +87,14 @@ const team = [
       "Jono runs a successful Fire and Security business that continues to go from strength to strength. Introduced to gold trading by a close friend, it quickly became a game changer — generating consistent daily profits through structured signals, a solid understanding of market movement, and disciplined risk management. Gold has become a serious second income stream that he has fully committed to. Now he passes that knowledge on to family and friends, helping them understand the process, stay disciplined, and take advantage of the same opportunities.",
     socials: {},
   },
+  {
+    name: "Keeva",
+    role: "Affiliate & Gold Trader",
+    image: "/team/keeva_2.png",
+    description:
+      "A hardworking, grounded individual with a strong background as a professional ground worker, where discipline, resilience, and consistency have always been part of his daily life. Alongside his trade, he spent the last seven years building his knowledge and experience in the stock market, developing a sharp eye for opportunities and a steady approach to risk. Recently, he made the shift into trading gold — an opportunity that came through a trusted friend. In just three months, that move has proven life changing, opening doors he hadn't imagined possible. Through focus, adaptability, and commitment, he has been able to step away from full-time work and pursue trading as a primary path. Driven by growth, both personally and financially, he is always looking to evolve, learn, and make the most of the opportunities in front of him.",
+    socials: {},
+  },
 ];
 
 const socialIcons: Record<string, React.ElementType> = {
