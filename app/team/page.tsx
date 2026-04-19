@@ -96,7 +96,7 @@ const team = [
     socials: {},
   },
   {
-    name: "Yvonne",
+    name: "Yvonne Olphert",
     role: "Affiliate & Gold Trader",
     image: "/team/yvonne_2.jpg",
     description:
