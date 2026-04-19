@@ -87,6 +87,14 @@ const team = [
       "A hardworking, grounded individual with a strong background as a professional ground worker, where discipline, resilience, and consistency have always been part of his daily life. Alongside his trade, he spent the last seven years building his knowledge and experience in the stock market, developing a sharp eye for opportunities and a steady approach to risk. Recently, he made the shift into trading gold — an opportunity that came through a trusted friend. In just three months, that move has proven life changing, opening doors he hadn't imagined possible. Through focus, adaptability, and commitment, he has been able to step away from full-time work and pursue trading as a primary path. Driven by growth, both personally and financially, he is always looking to evolve, learn, and make the most of the opportunities in front of him.",
     socials: {},
   },
+  {
+    name: "Yvonne",
+    role: "Affiliate & Gold Trader",
+    image: "/team/yvonne_2.jpg",
+    description:
+      "Mum of two and full-time pub & restaurant manager with a passion for personal growth and building new opportunities. Alongside her career, she is a TikTok creator and part-time gold trader, currently developing her skills within the financial markets. Dedicated to learning, growing, and helping others explore trading as a potential additional income stream — focused on creating a better future for her family while supporting others on their journey.",
+    socials: {},
+  },
 ];
 
 const socialIcons: Record<string, React.ElementType> = {
