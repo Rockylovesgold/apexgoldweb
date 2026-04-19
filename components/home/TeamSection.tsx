@@ -25,7 +25,7 @@ const team = [
   },
   {
     name: "Kyle",
-    role: "Community Builder & Entrepreneur",
+    role: "Founding Member",
     image: "/team/dinny_2.png",
     description:
       "A 27-year-old entrepreneur with a strong focus on building and scaling modern businesses in the digital space. With a background in marketing and web development, he specialises in creating systems that drive growth, increase visibility, and generate consistent results. He has successfully developed and managed multiple businesses across online and service-based industries, combining practical execution with a deep understanding of digital platforms. Alongside this, he has been actively developing his trading strategy over the past two years — further sharpening his analytical thinking, discipline, and risk management skills as part of his long-term business direction.",
