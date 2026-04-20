@@ -124,7 +124,7 @@ export default function AppSidebar() {
 
   const initials = profile?.display_name
     ? profile.display_name.split(' ').map((n: string) => n[0]).join('').toUpperCase().slice(0, 2)
-    : '?'
+    : 'NA'
 
   const roleName = profile?.role
     ? profile.role.charAt(0).toUpperCase() + profile.role.slice(1)
@@ -262,7 +262,7 @@ export default function AppSidebar() {
                 textOverflow: 'ellipsis',
               }}
             >
-              {profile?.display_name || 'User'}
+              {profile?.display_name || 'Naveed'}
             </div>
             <div style={{ fontSize: '11px', color: 'var(--color-text-muted)' }}>
               {roleName}
