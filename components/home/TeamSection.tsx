@@ -95,6 +95,14 @@ const team = [
       "Mum of two and full-time pub & restaurant manager with a passion for personal growth and building new opportunities. Alongside her career, she is a TikTok creator and part-time gold trader, currently developing her skills within the financial markets. Dedicated to learning, growing, and helping others explore trading as a potential additional income stream — focused on creating a better future for her family while supporting others on their journey.",
     socials: {},
   },
+  {
+    name: "Callum",
+    role: "Affiliate & Gold Trader",
+    image: "/team/callum_2.jpg",
+    description:
+      "At Apex Gold Trading, Callum plays a key role in helping individuals understand and navigate the gold and financial markets with confidence. His career began in customer facing and operational roles, where he developed a strong foundation in communication, negotiation, and understanding how businesses operate at a ground level. He later transitioned into the energy sector, advising companies on procurement strategies, cost reduction, and the integration of renewable solutions. Alongside his work in energy, Callum has expanded into trading and international business, with a growing focus on global markets and cross border opportunities. His approach centres around risk management, strategic thinking, and building scalable income streams. Through Apex Gold Trading, Callum is committed to providing clear, practical guidance to traders at all levels, helping them develop the skills, mindset, and structure needed to succeed in today's markets.",
+    socials: {},
+  },
 ];
 
 const socialIcons: Record<string, React.ElementType> = {
