@@ -49,7 +49,7 @@ const socials = [
   { label: "Instagram", handle: "@apexgoldtrading", icon: Instagram, href: "https://www.instagram.com/apexgoldtrading?igsh=MWd6NGh3bXh2YTRsMQ%3D%3D&utm_source=qr" },
   { label: "TikTok", handle: "@apexgoldtrading", icon: TikTokIcon, href: "https://www.tiktok.com/@apexgoldtrading?_r=1&_t=ZN-954UJPWkRlO" },
   { label: "Facebook", handle: "Apex Gold Trading", icon: Facebook, href: "https://www.facebook.com/share/1L46q81nFJ/?mibextid=wwXIfr" },
-  { label: "Telegram", handle: "Live Community", icon: Send, href: "https://t.me/+Ew81mZwq2x8yNTQ8" },
+  { label: "Telegram", handle: "Live Community", icon: Send, href: "https://t.me/officialtradingsupportbot" },
   { label: "Results Channel", handle: "Trade Results", icon: Send, href: "https://t.me/apexgoldresults" },
 ];
 

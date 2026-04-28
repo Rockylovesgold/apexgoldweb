@@ -394,7 +394,7 @@ export function HeroSection() {
             </p>
 
             <div className="hero-cta mt-5 flex flex-wrap justify-center gap-2 lg:justify-start">
-              <GoldButton variant="primary" size="lg" href="https://t.me/+Ew81mZwq2x8yNTQ8" showArrow>
+              <GoldButton variant="primary" size="lg" href="https://t.me/officialtradingsupportbot" showArrow>
                 Join the Community
               </GoldButton>
               <GoldButton variant="secondary" size="lg" href="/about">

@@ -15,7 +15,7 @@ const socialLinks = [
   { icon: Instagram, href: "https://www.instagram.com/apexgoldtrading?igsh=MWd6NGh3bXh2YTRsMQ%3D%3D&utm_source=qr", label: "Instagram" },
   { icon: TikTokIcon, href: "https://www.tiktok.com/@apexgoldtrading?_r=1&_t=ZN-954UJPWkRlO", label: "TikTok" },
   { icon: Facebook, href: "https://www.facebook.com/share/1L46q81nFJ/?mibextid=wwXIfr", label: "Facebook" },
-  { icon: Send, href: "https://t.me/+Ew81mZwq2x8yNTQ8", label: "Telegram" },
+  { icon: Send, href: "https://t.me/officialtradingsupportbot", label: "Telegram" },
   { icon: Twitter, href: "https://x.com/shabbaranks333?s=21", label: "Twitter / X" },
 ];
 
@@ -42,7 +42,7 @@ export function FinalCTA() {
             Join the Apex Gold Trading community. Gold-focused analysis, trade ideas, and education in one high-trust environment.
           </p>
           <div style={{ display: "flex", flexWrap: "wrap", gap: "var(--space-2)", justifyContent: "center" }}>
-            <GoldButton variant="primary" size="lg" href="https://t.me/+Ew81mZwq2x8yNTQ8" showArrow>
+            <GoldButton variant="primary" size="lg" href="https://t.me/officialtradingsupportbot" showArrow>
               Join the Community
             </GoldButton>
             <GoldButton variant="secondary" size="lg" href="/about">

@@ -296,7 +296,7 @@ export default function TeamPage() {
                 { icon: Instagram, href: "https://www.instagram.com/apexgoldtrading?igsh=MWd6NGh3bXh2YTRsMQ%3D%3D&utm_source=qr", label: "Instagram" },
                 { icon: TikTokIcon, href: "https://www.tiktok.com/@apexgoldtrading?_r=1&_t=ZN-954UJPWkRlO", label: "TikTok" },
                 { icon: Facebook, href: "https://www.facebook.com/share/1L46q81nFJ/?mibextid=wwXIfr", label: "Facebook" },
-                { icon: Send, href: "https://t.me/+Ew81mZwq2x8yNTQ8", label: "Telegram" },
+                { icon: Send, href: "https://t.me/officialtradingsupportbot", label: "Telegram" },
               ].map(({ icon: Icon, href, label }) => (
                 <a
                   key={label}
@@ -369,7 +369,7 @@ export default function TeamPage() {
             Get real-time signals, live analysis, and direct access to the traders behind Apex Gold.
           </p>
           <a
-            href="https://t.me/+Ew81mZwq2x8yNTQ8"
+            href="https://t.me/officialtradingsupportbot"
             target="_blank"
             rel="noopener noreferrer"
             style={{
