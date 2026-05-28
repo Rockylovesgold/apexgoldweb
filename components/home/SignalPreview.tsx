@@ -152,21 +152,6 @@ export function SignalPreview() {
             marginTop: "var(--space-5)",
           }}
         >
-          {["/wix/meta-2.jpeg", "/wix/meta-3.jpeg"].map((src, i) => (
-            <div
-              key={i}
-              className="reveal card"
-              style={{ padding: 0, overflow: "hidden", position: "relative", aspectRatio: "9/16", maxHeight: "320px" }}
-            >
-              <Image
-                src={src}
-                alt={`Live Apex Gold trade results ${i + 1}`}
-                fill
-                style={{ objectFit: "cover", objectPosition: "top" }}
-                sizes="(max-width: 640px) 50vw, 200px"
-              />
-            </div>
-          ))}
           <div
             className="reveal card"
             style={{
