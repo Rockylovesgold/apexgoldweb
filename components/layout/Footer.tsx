@@ -44,7 +44,7 @@ const socialLinks = [
   { icon: Instagram, href: "https://www.instagram.com/apexgoldtrading?igsh=MWd6NGh3bXh2YTRsMQ%3D%3D&utm_source=qr", label: "Instagram" },
   { icon: TikTokIcon, href: "https://www.tiktok.com/@apexgoldtrading?_r=1&_t=ZN-954UJPWkRlO", label: "TikTok" },
   { icon: Facebook, href: "https://www.facebook.com/share/1L46q81nFJ/?mibextid=wwXIfr", label: "Facebook" },
-  { icon: Send, href: "/maintenance", label: "Telegram" },
+  { icon: Send, href: "https://t.me/charist12", label: "Telegram" },
 ];
 
 export function Footer() {
@@ -117,11 +117,11 @@ export function Footer() {
             </ul>
 
             <div className="mt-5 space-y-2 text-xs text-text-tertiary">
-              <a href="/maintenance" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 hover:text-text-primary transition-colors duration-fast">
+              <a href="https://t.me/charist12" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 hover:text-text-primary transition-colors duration-fast">
                 <MessageCircle size={12} />
                 Telegram Support Bot
               </a>
-              <a href="/maintenance" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 hover:text-text-primary transition-colors duration-fast">
+              <a href="https://t.me/charist12" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 hover:text-text-primary transition-colors duration-fast">
                 <Send size={12} />
                 Live Results Channel
               </a>

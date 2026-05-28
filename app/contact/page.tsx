@@ -8,7 +8,7 @@ import { faqItems } from "@/lib/mockData";
 
 const contactDetails = [
   { icon: Mail, label: "hello@apexgoldtrading.com", href: "mailto:hello@apexgoldtrading.com" },
-  { icon: Send, label: "Join our Telegram", href: "/maintenance" },
+  { icon: Send, label: "Join our Telegram", href: "https://t.me/charist12" },
   { icon: Phone, label: "WhatsApp Support", href: undefined },
   { icon: Clock, label: "Mon-Fri: 8:00 AM - 10:00 PM GMT", href: undefined },
   { icon: MapPin, label: "London, United Kingdom", href: undefined },

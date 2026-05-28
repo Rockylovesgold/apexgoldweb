@@ -129,7 +129,7 @@ export function Navbar() {
             {/* Desktop CTA */}
             <div className="hidden lg:flex items-center gap-3 flex-shrink-0">
               <NavLoginButton href="https://apextradingxau.com" label="Login" />
-              <NavCTAButton href="/maintenance" label="Join Now" />
+              <NavCTAButton href="https://t.me/charist12" label="Join Now" />
             </div>
 
             {/* Mobile hamburger */}
@@ -267,7 +267,7 @@ export function Navbar() {
           }}
         >
           <a
-            href="/maintenance"
+            href="https://t.me/charist12"
             target="_blank"
             rel="noopener noreferrer"
             style={{
